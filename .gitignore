@@ -1,0 +1,40 @@
+# Node / Frontend dependencies & caches
+**/node_modules/
+**/.next/
+**/.nuxt/
+**/.output/
+**/.turbo/
+**/.parcel-cache/
+**/.cache/
+
+# Python virtual environments & bytecode
+**/__pycache__/
+**/*.py[cod]
+*$py.class
+**/.venv/
+**/venv/
+**/env/
+**/ENV/
+
+# Build outputs & compiled binaries
+**/build/
+**/dist/
+**/dist.zip
+**/*.exe
+**/*.pkg
+**/*.pyz
+
+# Browser automation & temp profile caches
+**/twitter_profile/
+**/playwright/.cache/
+
+# System and logs
+**/*.log
+**/.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & AI Assistant temporary data
+**/.agent/
+**/.qodo/
+**/.gemini/
