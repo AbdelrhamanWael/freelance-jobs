@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "studentServices": "Layanan Mahasiswa",
+    "onlineDegrees": "Gelar Online",
+    "englishLearning": "Belajar Bahasa Inggris",
+    "studyAbroad": "Belajar di Luar Negeri",
+    "aboutUs": "Tentang Kami"
+  },
+  "cta": {
+    "freeConsultation": "Konsultasi Gratis",
+    "whatsapp": "Hubungi Kami di WhatsApp",
+    "whatsappSubtext": "Respon cepat • Informasi lengkap • 100% Gratis",
+    "contactUs": "Konsultasi Gratis",
+    "seeAllCountries": "Lihat Semua Negara →",
+    "seeAllTestimonials": "Lihat Semua Testimoni →",
+    "seeAllUniversities": "Lihat Semua Universitas →"
+  },
+  "hero": {
+    "title1": "Masa Depanmu Dimulai",
+    "title2": "Sekarang bersama StudyCo",
+    "subtitle": "Kami membantu pelajar Indonesia meraih pendidikan terbaik di universitas, institusi bahasa, dan program online berkualitas di seluruh dunia.",
+    "features": {
+      "consultation": "Konsultasi Gratis",
+      "team": "Tim Berpengalaman",
+      "process": "Proses Mudah & Aman",
+      "support": "Dukungan Penuh"
+    },
+    "trustBadge": {
+      "title": "Ribuan Pelajar",
+      "subtitle": "Telah percaya pada kami"
+    }
+  },
+  "services": {
+    "abroad": {
+      "title": "Belajar di Luar Negeri",
+      "desc": "Kuliah di universitas terbaik di berbagai negara. Pilihan program lengkap untuk masa depanmu."
+    },
+    "english": {
+      "title": "Belajar Bahasa Inggris",
+      "desc": "Kursus bahasa Inggris di institusi terbaik di berbagai negara. Tingkatkan kemampuan bahasamu sekarang!"
+    },
+    "online": {
+      "title": "Gelar Online",
+      "desc": "Program Sarjana, Magister, MBA & sertifikasi online dari universitas ternama di seluruh dunia."
+    },
+    "student": {
+      "title": "Layanan Mahasiswa",
+      "desc": "Dukungan lengkap mulai dari aplikasi, visa, akomodasi, hingga keberangkatan."
+    }
+  },
+  "destinations": {
+    "title": "Destinasi Studi Populer",
+    "my": { "name": "Malaysia", "desc": "Banyak pilihan universitas dan biaya terjangkau." },
+    "au": { "name": "Australia", "desc": "Kualitas pendidikan tinggi dan peluang kerja luas." },
+    "uk": { "name": "United Kingdom", "desc": "Pendidikan berkualitas dengan sejarah panjang." },
+    "ca": { "name": "Canada", "desc": "Lingkungan aman dan multiculture." },
+    "us": { "name": "United States", "desc": "Universitas terbaik dunia dan inovasi terdepan." },
+    "nz": { "name": "New Zealand", "desc": "Kualitas hidup tinggi dan alam yang indah." }
+  },
+  "stats": {
+    "partners": { "value": "500+", "label": "Universitas Mitra" },
+    "countries": { "value": "20+", "label": "Negara Tujuan" },
+    "students": { "value": "10.000+", "label": "Pelajar Indonesia Terbantu" },
+    "visa": { "value": "95%", "label": "Tingkat Keberhasilan Visa" }
+  },
+  "testimonials": {
+    "title": "Apa kata mereka?",
+    "t1": {
+      "text": "StudyCo sangat membantu saya mendapatkan beasiswa di Malaysia. Prosesnya cepat dan mudah!",
+      "name": "Fahri Ramadhan",
+      "university": "Sunway University, Malaysia"
+    },
+    "t2": {
+      "text": "Tim StudyCo selalu siap membantu dari awal sampai saya berangkat ke Australia. Terima kasih StudyCo!",
+      "name": "Siti Aulia",
+      "university": "Monash University, Australia"
+    },
+    "t3": {
+      "text": "Program online-nya fleksibel dan berkualitas. Sekarang saya bisa kuliah sambil bekerja.",
+      "name": "Dimas Prasetyo",
+      "university": "MBA Online, UK"
+    }
+  },
+  "partners": {
+    "title": "Universitas Mitra Kami"
+  },
+  "footer": {
+    "ctaTitle": "Siap Memulai Perjalanan Pendidikan Anda?",
+    "ctaSubtitle": "Konsultasi gratis bersama tim ahli StudyCo sekarang.",
+    "links": {
+      "studyAbroad": "Belajar di Luar Negeri",
+      "englishLearning": "Belajar Bahasa Inggris",
+      "onlineDegrees": "Gelar Online",
+      "studentServices": "Layanan Mahasiswa",
+      "aboutUs": "Tentang Kami"
+    },
+    "copyright": "© 2024 StudyCo Education Services."
+  }
+}

@@ -1,0 +1,575 @@
+/* ===========================================
+   STUDENTS MANAGEMENT PAGE STYLES
+   =========================================== */
+
+/* Search and Filter Section */
+.search-section {
+    background: var(--card-bg, rgba(255, 255, 255, 0.9));
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.search-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-input-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--accent-color, #d4af37);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-bg, #fff);
+    color: var(--text-color, #333);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color, #243a6b);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.filter-group select {
+    padding: 12px 15px;
+    border: 2px solid var(--accent-color, #d4af37);
+    border-radius: 8px;
+    font-size: 1rem;
+    min-width: 120px;
+    background-color: var(--input-bg, #fff);
+    color: var(--text-color, #333);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary-color, #243a6b);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Students Grid */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Student Cards */
+.course-card {
+    background-color: var(--card-bg, #fff);
+    color: var(--text-color, #333);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.course-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.course-content img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid var(--accent-color, #d4af37);
+    transition: border-color 0.3s ease;
+}
+
+.course-content h3 {
+    color: var(--primary-color, #243a6b);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.course-content p {
+    color: var(--secondary-text-color, #666);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.course-content div {
+    background: linear-gradient(135deg, var(--accent-color, #d4af37), var(--accent-light, #f5deb3));
+    color: var(--primary-color, #243a6b);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    background: var(--button-bg, linear-gradient(135deg, #d4af37, #f5deb3));
+    color: var(--button-text, #243a6b);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    min-width: 40px;
+}
+
+.pagination button:hover,
+.pagination button:focus {
+    background: var(--button-hover-bg, linear-gradient(135deg, #243a6b, #1a2a4a));
+    color: var(--button-hover-text, #f5deb3);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+.pagination button.active {
+    background: var(--button-active-bg, linear-gradient(135deg, #243a6b, #1a2a4a));
+    color: var(--button-active-text, #f5deb3);
+    transform: translateY(-2px);
+}
+
+/* ===========================================
+   ADD POINTS PAGE STYLES
+   =========================================== */
+
+/* Student Info Card */
+.student-info-card {
+    background-color: var(--card-bg, rgba(255, 255, 255, 0.9));
+    color: var(--text-color, #333);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.student-info-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 4px solid var(--accent-color, #d4af37);
+    transition: border-color 0.3s ease;
+}
+
+.student-info-card h2 {
+    color: var(--primary-color, #243a6b);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .student-info-card h2 {
+    color: var(--primary-color, #c2c2c2);
+}
+
+.student-info-card p {
+    color: var(--secondary-text-color, #666);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.student-info-card div {
+    /* background: linear-gradient(135deg, var(--accent-color, #d4af37), var(--accent-light, #f5deb3)); */
+    color: var(--primary-color, #243a6b);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Add Points Form */
+.add-points-form {
+    background-color: var(--card-bg, rgba(255, 255, 255, 0.9));
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color, #243a6b);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--accent-color, #d4af37);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: var(--input-bg, #fff);
+    color: var(--text-color, #333);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color, #243a6b);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form-actions .exam-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Success Message */
+#successMessage {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    animation: slideIn 0.5s ease-out;
+    margin-bottom: 3rem;
+}
+
+#successMessage h3 {
+    margin-bottom: 0.5rem;
+}
+
+#successMessage .exam-btn {
+    margin-top: 1rem;
+    background: white;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+}
+
+#successMessage .exam-btn:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input-group {
+        min-width: auto;
+    }
+
+    .filter-group select {
+        min-width: auto;
+    }
+
+    .students-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .course-content {
+        padding: 1.5rem;
+    }
+
+    .course-content img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .course-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .pagination {
+        gap: 0.25rem;
+    }
+
+    .pagination button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .student-info-card {
+        padding: 1.5rem;
+    }
+
+    .student-info-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .add-points-form {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-actions .exam-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .search-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .students-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .course-content {
+        padding: 1.25rem;
+    }
+
+    .course-content img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .course-content h3 {
+        font-size: 1rem;
+    }
+
+    .course-content div {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .pagination button {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+        min-width: 35px;
+    }
+
+    .student-info-card {
+        padding: 1.25rem;
+    }
+
+    .student-info-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .student-info-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .add-points-form {
+        padding: 1.25rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .form-actions .exam-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+
+    #successMessage {
+        padding: 1.25rem;
+        margin-top: 1.5rem;
+    }
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in animation to student cards */
+.course-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ===========================================
+   DARK MODE SPECIFIC OVERRIDES
+   =========================================== */
+
+body.dark-mode .search-section {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+body.dark-mode .course-card {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+body.dark-mode .student-info-card {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+body.dark-mode .add-points-form {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: rgba(51, 51, 51, 0.8);
+    border-color: rgba(212, 175, 55, 0.5);
+    color: #e7eef8;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: rgba(231, 238, 248, 0.6);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .course-card,
+    .exam-btn,
+    .pagination button,
+    #successMessage {
+        animation: none;
+        transition: none;
+    }
+
+    .course-card:hover,
+    .exam-btn:hover,
+    .pagination button:hover {
+        transform: none;
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+.search-input-group input:focus,
+.filter-group select:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--primary-color, #243a6b);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+
+    .course-card,
+    .student-info-card,
+    .add-points-form,
+    .search-section {
+        border: 2px solid var(--accent-color, #d4af37);
+    }
+}
+
+body.dark-mode .filter-group select {
+
+    background-color: #363636;
+    color: #fffcfc;
+}
+
+body.dark-mode .search-input-group input {
+
+    background-color: #363636;
+    color: var(--text-color, #fffcfc);
+}
+
+@media (max-width: 480px) {
+    .pagination button {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+        /* max-width: 35px; */
+        max-width: 103px;
+    }
+}

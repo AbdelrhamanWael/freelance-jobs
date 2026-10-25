@@ -1,0 +1,150 @@
+{
+  "access": {
+    "embargo": {
+      "active": false,
+      "reason": null
+    },
+    "files": "restricted",
+    "record": "public",
+    "status": "restricted"
+  },
+  "created": "2023-04-30T15:37:54.261567+00:00",
+  "custom_fields": {},
+  "deletion_status": {
+    "is_deleted": false,
+    "status": "P"
+  },
+  "files": {
+    "enabled": true
+  },
+  "id": "7787671",
+  "is_draft": false,
+  "is_published": true,
+  "links": {
+    "access": "https://zenodo.org/api/records/7787671/access",
+    "access_grants": "https://zenodo.org/api/records/7787671/access/grants",
+    "access_links": "https://zenodo.org/api/records/7787671/access/links",
+    "access_request": "https://zenodo.org/api/records/7787671/access/request",
+    "access_users": "https://zenodo.org/api/records/7787671/access/users",
+    "archive": "https://zenodo.org/api/records/7787671/files-archive",
+    "archive_media": "https://zenodo.org/api/records/7787671/media-files-archive",
+    "communities": "https://zenodo.org/api/records/7787671/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/7787671/communities-suggestions",
+    "doi": "https://doi.org/10.5281/zenodo.7787671",
+    "draft": "https://zenodo.org/api/records/7787671/draft",
+    "file_modification": "https://zenodo.org/api/records/7787671/file-modification",
+    "files": "https://zenodo.org/api/records/7787671/files",
+    "latest": "https://zenodo.org/api/records/7787671/versions/latest",
+    "latest_html": "https://zenodo.org/records/7787671/latest",
+    "media_files": "https://zenodo.org/api/records/7787671/media-files",
+    "parent": "https://zenodo.org/api/records/7787670",
+    "parent_doi": "https://doi.org/10.5281/zenodo.7787670",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.7787670",
+    "parent_html": "https://zenodo.org/records/7787670",
+    "preview_html": "https://zenodo.org/records/7787671?preview=1",
+    "quota_increase": "https://zenodo.org/api/records/7787671/quota-increase",
+    "request_deletion": "https://zenodo.org/api/records/7787671/request-deletion",
+    "requests": "https://zenodo.org/api/records/7787671/requests",
+    "reserve_doi": "https://zenodo.org/api/records/7787671/draft/pids/doi",
+    "self": "https://zenodo.org/api/records/7787671",
+    "self_doi": "https://doi.org/10.5281/zenodo.7787671",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.7787671",
+    "self_html": "https://zenodo.org/records/7787671",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:7787671/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:7787671/sequence/default",
+    "versions": "https://zenodo.org/api/records/7787671/versions"
+  },
+  "media_files": {
+    "enabled": false
+  },
+  "metadata": {
+    "creators": [
+      {
+        "affiliations": [
+          {
+            "name": "National Taiwan University of Science and Technology"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Ching-Wei Wang",
+          "identifiers": [
+            {
+              "identifier": "0000-0001-9992-6863",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Ching-Wei Wang",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<p>This is the dataset for 2023 Cephalometric Landmark Detection Challenge (CL-Detection2023).&nbsp;<strong>Each team needs to send a submit the <a href=\"https://drive.google.com/file/d/1y2sR_ymKpSjCdQemCjGN9YazsFO1fmsN/view?usp=share_link\">Registration Form</a>&nbsp;first to Prof Wang (cweiwang@mail.ntust.edu.tw; cwwang1979@gmail.com) and Mr. Hikam Muzakky (m11123801@mail.ntust.edu.tw)</strong></p>\n\n<p>The CL-Detection 2023 cephalometric landmark detection challenge is held on <a href=\"https://conferences.miccai.org/2023/en/\">2023 MICCAI conference</a>.</p>\n\n<p>Teams are required to register on the Grand Challenge site before they will be given access to the data.&nbsp;Each team needs to send a registration email including the team name, team members&#39; names, and affiliations to the organizer to Prof Wang (cweiwang@mail.ntust.edu.tw; cwwang1979@gmail.com) and Mr. Hikam Muzakky (m11123801@mail.ntust.edu.tw)</p>\n\n<p>No publication rights are given on this data.&nbsp;The data may only be used for the purpose of the&nbsp;challenge.&nbsp;This is due to constraints imposed on use of the data by the ethics approval.</p>",
+    "publication_date": "2023-03-31",
+    "publisher": "Zenodo",
+    "resource_type": {
+      "id": "image-figure",
+      "title": {
+        "de": "Abbildung",
+        "en": "Figure"
+      }
+    },
+    "title": "CL-Detection 2023 Training Dataset"
+  },
+  "parent": {
+    "access": {
+      "owned_by": {
+        "user": "525738"
+      },
+      "settings": {
+        "accept_conditions_text": "<p>The access has been restricted and the dataset will be accessible only to the participants of the challenge. If you are a registered user of the challenge, please request access and we will grant the access to the dataset after a review.</p>\n\n<p><strong>Each team needs to send a submit the <a href=\"https://drive.google.com/file/d/1y2sR_ymKpSjCdQemCjGN9YazsFO1fmsN/view?usp=share_link\">Registration Form</a> to Prof Wang (cweiwang@mail.ntust.edu.tw; cwwang1979@gmail.com) and Mr. Hikam Muzakky (m11123801@mail.ntust.edu.tw) before obtaining access to dataset.</strong></p>\n\n<p>&nbsp;</p>\n\n<p>Important Dates:</p>\n\n<ul>\n\t<li>Open for registration: April 1, 2023</li>\n\t<li>Training data release: May 1, 2023</li>\n\t<li>Validation data release: June 1, 2023 (00.00 TWT)</li>\n\t<li>Deadline for validation submission: July 1, 2023 (00.00 TWT)</li>\n\t<li>Testing data release: August 1, 2023 (00.00 TWT)</li>\n\t<li>Deadline for testing submission: August 15, 2023 (00.00 TWT)</li>\n\t<li>Deadline for paper submission in the LNCS Springer format (with 4 pages) : September 15, 2023</li>\n\t<li>Challenge workshop: October 8, 2023</li>\n</ul>",
+        "allow_guest_requests": true,
+        "allow_user_requests": true,
+        "secret_link_expiration": 30
+      }
+    },
+    "communities": {},
+    "id": "7787670",
+    "pids": {
+      "doi": {
+        "client": "datacite",
+        "identifier": "10.5281/zenodo.7787670",
+        "provider": "datacite"
+      }
+    }
+  },
+  "pids": {
+    "doi": {
+      "client": "datacite",
+      "identifier": "10.5281/zenodo.7787671",
+      "provider": "datacite"
+    },
+    "oai": {
+      "identifier": "oai:zenodo.org:7787671",
+      "provider": "oai"
+    }
+  },
+  "revision_id": 1,
+  "stats": {
+    "all_versions": {
+      "data_volume": 545095203266.0,
+      "downloads": 373,
+      "unique_downloads": 241,
+      "unique_views": 1609,
+      "views": 2732
+    },
+    "this_version": {
+      "data_volume": 545095203266.0,
+      "downloads": 373,
+      "unique_downloads": 241,
+      "unique_views": 1601,
+      "views": 2722
+    }
+  },
+  "status": "published",
+  "swh": {},
+  "updated": "2023-04-30T15:37:55.456126+00:00",
+  "versions": {
+    "index": 1,
+    "is_latest": true
+  }
+}

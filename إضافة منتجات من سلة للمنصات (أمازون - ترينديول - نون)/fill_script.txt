@@ -1,0 +1,17 @@
+(async function() {
+    console.log("جاري ملء الحقول تلقائياً...");
+    function setVal(input, val) {
+        if (!input) return;
+        input.focus();
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
+        if (setter) setter.call(input, val); else input.value = val;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+        input.dispatchEvent(new Event('blur', { bubbles: true }));
+    }
+    document.querySelectorAll('div[col-id*="temperature"] input, div[data-column-id*="temperature"] input').forEach(i => setVal(i, 'Ambient'));
+    document.querySelectorAll('div[col-id*="number_of_items"] input, div[data-column-id*="number_of_items"] input').forEach(i => setVal(i, '1'));
+    document.querySelectorAll('div[col-id*="ingredients"] input, div[data-column-id*="ingredients"] input').forEach(i => setVal(i, 'Natural herbal ingredients'));
+    document.querySelectorAll('div[col-id*="highlight"] input, div[data-column-id*="highlight"] input').forEach(i => setVal(i, ''));
+    console.log("✓ تم ملء الحقول بنجاح!");
+})();

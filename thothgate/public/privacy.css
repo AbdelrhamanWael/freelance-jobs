@@ -1,0 +1,90 @@
+.privacy-page {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #f5deb3 0%, #f4e4c1 100%);
+    color: #243a6b;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.privacy-page .container {
+    max-width: 800px;
+    margin: 3rem auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2rem;
+    border: 2px solid #d4af37;
+}
+
+.privacy-page h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.privacy-page h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #243a6b;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.privacy-page h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #f5deb3);
+    border-radius: 2px;
+    margin: 8px 0 0 0;
+}
+
+.privacy-page p,
+.privacy-page ul {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 1.2rem;
+}
+
+.privacy-page ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.privacy-page li {
+    margin-bottom: 0.7rem;
+}
+
+.privacy-page a {
+    color: #243a6b;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.privacy-page a:hover {
+    color: #d4af37;
+}
+
+@media (max-width: 600px) {
+    .privacy-page .container {
+        padding: 1.2rem 0.5rem;
+    }
+
+    .privacy-page h1 {
+        font-size: 1.6rem;
+    }
+
+    .privacy-page h2 {
+        font-size: 1.1rem;
+    }
+}

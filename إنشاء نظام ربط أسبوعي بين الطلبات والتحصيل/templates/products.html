@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة التكاليف | نظام ربط الطلبات والتحصيل</title>
+  <meta name="description" content="إدارة تكاليف المنتجات - نظام ربط الطلبات والتحصيل الأسبوعي">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface2: #1a2235;
+      --border: rgba(255, 255, 255, 0.07);
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --purple: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Animated Background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(34, 211, 238, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+      z-index: -1;
+      animation: bgShift 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(-3%, -3%);
+      }
+    }
+
+    /* ── Top Navigation Bar ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      border-radius: 12px;
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.25s;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .back-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-1px);
+    }
+
+    /* ── Main Container ── */
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+
+    /* ── Page Header ── */
+    .page-header {
+      margin-bottom: 28px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--cyan), var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .page-sub {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── KPI Cards ── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent, var(--cyan));
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(34, 211, 238, 0.2);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .kpi-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .kpi-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .kpi-value {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .kpi-sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── Search & Filter Bar ── */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 44px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 14px;
+      font-family: 'Tajawal', sans-serif;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+    }
+
+    .search-box input::placeholder {
+      color: var(--muted);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 16px;
+      pointer-events: none;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(34, 211, 238, 0.06);
+    }
+
+    .save-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: 0.25s;
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .save-all-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .save-all-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    /* ── Products Card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      border-radius: 20px;
+      background: rgba(34, 211, 238, 0.12);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ── Table ── */
+    .products-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .products-table th {
+      text-align: right;
+      padding: 12px 20px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+      white-space: nowrap;
+    }
+
+    .products-table td {
+      padding: 14px 20px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .products-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .products-table tbody tr {
+      transition: 0.2s;
+    }
+
+    .products-table tbody tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Row index */
+    .row-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    /* SKU badge */
+    .sku-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      direction: ltr;
+    }
+
+    .sku-badge.auto {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .sku-badge.manual {
+      background: rgba(34, 211, 238, 0.08);
+      color: var(--cyan);
+      border: 1px solid rgba(34, 211, 238, 0.15);
+    }
+
+    /* Product name */
+    .product-name {
+      font-weight: 600;
+      color: var(--text);
+      max-width: 450px;
+      line-height: 1.5;
+    }
+
+    /* Cost input */
+    .cost-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cost-input {
+      width: 110px;
+      padding: 10px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Tajawal', sans-serif;
+      text-align: center;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .cost-input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+    }
+
+    .cost-input.zero {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.04);
+    }
+
+    .cost-input.saved {
+      border-color: var(--emerald) !important;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+    }
+
+    .currency-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Save button */
+    .save-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--emerald);
+      transition: 0.25s;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .save-btn:hover {
+      background: rgba(16, 185, 129, 0.2);
+      border-color: var(--emerald);
+      transform: translateY(-1px);
+    }
+
+    .save-btn:active {
+      transform: translateY(0);
+    }
+
+    .save-btn.saving {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* ── Empty State ── */
+    .empty-state {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--muted);
+    }
+
+    .empty-state .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .empty-state .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .empty-state .desc {
+      font-size: 14px;
+    }
+
+    /* ── Toast ── */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toast {
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 280px;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .toast-success {
+      background: rgba(16, 185, 129, 0.95);
+      color: #fff;
+    }
+
+    .toast-error {
+      background: rgba(244, 63, 94, 0.95);
+      color: #fff;
+    }
+
+    .toast-info {
+      background: rgba(59, 130, 246, 0.95);
+      color: #fff;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--surface);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--surface2);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* ── Row animation ── */
+    .products-table tbody tr {
+      animation: fadeRow 0.3s ease backwards;
+    }
+
+    @keyframes fadeRow {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── No results ── */
+    .no-results {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--muted);
+      display: none;
+    }
+
+    .no-results.visible {
+      display: block;
+    }
+
+    .no-results .icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      opacity: 0.4;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .container {
+        padding: 16px;
+      }
+
+      .top-bar {
+        padding: 12px 16px;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .toolbar {
+        flex-direction: column;
+      }
+
+      .search-box {
+        min-width: 100%;
+      }
+
+      .product-name {
+        max-width: 200px;
+        font-size: 12px;
+      }
+
+      .products-table th,
+      .products-table td {
+        padding: 10px 12px;
+      }
+    }
+
+    /* ── Pulse indicator for zero-cost items ── */
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--amber);
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+      }
+
+      50% {
+        opacity: 0.6;
+        box-shadow: 0 0 0 6px rgba(245, 158, 11, 0);
+      }
+    }
+
+    /* ── Info banner ── */
+    .info-banner {
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(59, 130, 246, 0.06));
+      border: 1px solid rgba(34, 211, 238, 0.15);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-banner .icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-banner .content {
+      flex: 1;
+    }
+
+    .info-banner .title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+
+    .info-banner .desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════ TOP BAR ══════════════ -->
+  <div class="top-bar">
+    <div class="top-bar-right">
+      <div class="logo-icon">📊</div>
+      <div>
+        <div class="logo-text">نظام ربط الطلبات</div>
+        <div class="logo-sub">والتحصيل الأسبوعي</div>
+      </div>
+    </div>
+    <a href="/" class="back-btn" id="back-btn">
+      ← العودة للوحة التحكم
+    </a>
+  </div>
+
+  <!-- ══════════════ MAIN CONTENT ══════════════ -->
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="page-title">💰 إدارة تكاليف المنتجات</div>
+      <div class="page-sub">حدّث تكاليف المنتجات لحساب صافي الأرباح في التقارير</div>
+    </div>
+
+    <!-- KPI Summary -->
+    <div class="kpi-grid">
+      <div class="kpi-card" style="--accent: var(--cyan)">
+        <div class="kpi-icon">📦</div>
+        <div class="kpi-label">إجمالي المنتجات</div>
+        <div class="kpi-value" id="kpi-total">{{ products | length }}</div>
+        <div class="kpi-sub">منتج مسجّل</div>
+      </div>
+      <div class="kpi-card" style="--accent: var(--emerald)">
+        <div class="kpi-icon">✅</div>
+        <div class="kpi-label">مُسعّرة</div>
+        <div class="kpi-value" id="kpi-priced">0</div>
+        <div class="kpi-sub">تم تحديد تكلفتها</div>
+      </div>
+      <div class="kpi-card" style="--accent: var(--amber)">
+        <div class="kpi-icon">⚠️</div>
+        <div class="kpi-label">بدون تكلفة</div>
+        <div class="kpi-value" id="kpi-zero">0</div>
+        <div class="kpi-sub">تحتاج تحديث</div>
+      </div>
+      <div class="kpi-card" style="--accent: var(--purple)">
+        <div class="kpi-icon">🏷️</div>
+        <div class="kpi-label">مُكتشفة تلقائياً</div>
+        <div class="kpi-value" id="kpi-auto">0</div>
+        <div class="kpi-sub">من ملفات الطلبات</div>
+      </div>
+    </div>
+
+    <!-- Info Banner -->
+    <div class="info-banner">
+      <div class="icon">💡</div>
+      <div class="content">
+        <div class="title">كيف تعمل هذه الصفحة؟ (توضيح هام)</div>
+        <div class="desc">
+          أدخل <strong>تكلفة الوحدة</strong> (سعر شراء المنتج من المورد) لكل صنف.
+          <br>• عند الحفظ، يتم تحديث الأرباح في الخلفية لجميع الطلبات في الأسبوع الحالي.
+          <br>• <span style="color: var(--cyan); font-weight: 700;">إجمالي المبيعات (Sales)</span> في التقرير يمثل ما
+          دفعوه العملاء ولا يتغير بتغيير التكلفة.
+          <br>• <span style="color: var(--amber); font-weight: 700;">إجمالي التكلفة (Total Cost)</span> هو ما سيتغير في
+          التقرير بناءً على ما تدخله هنا.
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="ابحث بالاسم أو الكود...">
+      </div>
+      <button class="filter-btn" id="filterAll" onclick="filterProducts('all')">📋 الكل</button>
+      <button class="filter-btn" id="filterZero" onclick="filterProducts('zero')">⚠️ بدون تكلفة</button>
+      <button class="filter-btn" id="filterAuto" onclick="filterProducts('auto')">🔄 مكتشفة تلقائياً</button>
+      <button class="filter-btn" id="uploadBtn" onclick="document.getElementById('fileInput').click()"
+        style="border-color: var(--purple); color: var(--purple);">
+        📤 رفع ملف تكاليف (Excel)
+      </button>
+      <input type="file" id="fileInput" hidden multiple accept=".xlsx, .xls, .csv" onchange="uploadCosts(this)">
+      <button class="save-all-btn" id="saveAllBtn" onclick="saveAllModified()" disabled>
+        💾 حفظ جميع التعديلات
+        <span id="modifiedCount"
+          style="display:none; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 8px; font-size: 11px;"></span>
+      </button>
+      <!-- زر إعادة توليد التقرير - يظهر بعد حفظ التكاليف -->
+      <button class="save-all-btn" id="regenBtn" onclick="regenerateReport()"
+        style="background: linear-gradient(135deg, #10b981, #059669); display:none;">
+        📊 إعادة توليد التقرير بالتكاليف
+      </button>
+    </div>
+
+    <!-- ── Modal للـ Log ── -->
+    <div id="regenModal"
+      style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+      <div
+        style="background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:32px; max-width:700px; width:90%; max-height:80vh; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div style="font-size:18px; font-weight:800; color:var(--cyan);">📊 إعادة توليد التقرير</div>
+          <button onclick="document.getElementById('regenModal').style.display='none'"
+            style="background:var(--surface2); border:1px solid var(--border); color:var(--muted); padding:6px 14px; border-radius:8px; cursor:pointer; font-family:'Tajawal',sans-serif;">✕
+            إغلاق</button>
+        </div>
+        <div id="regenLog"
+          style="background:#0a0f1a; border:1px solid var(--border); border-radius:12px; padding:16px; font-family:'Courier New',monospace; font-size:12px; color:#a8d8a8; line-height:1.8; max-height:400px; overflow-y:auto; white-space:pre-wrap;">
+          جاري التنفيذ...</div>
+        <div id="regenReports" style="display:none;">
+          <div style="font-size:14px; font-weight:700; color:var(--text); margin-bottom:10px;">📥 التقارير المتاحة
+            للتحميل:</div>
+          <div id="regenReportsList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Table Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          📋 قائمة المنتجات
+          <span class="card-count" id="visibleCount">{{ products | length }}</span>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="products-table" id="productsTable">
+          <thead>
+            <tr>
+              <th style="width: 50px;">#</th>
+              <th style="width: 140px;">SKU / الكود</th>
+              <th>اسم المنتج</th>
+              <th style="width: 180px;">التكلفة</th>
+              <th style="width: 100px;">حفظ</th>
+            </tr>
+          </thead>
+          <tbody id="productsBody">
+            {% for p in products %}
+            <tr data-sku="{{ p[0] }}" data-name="{{ p[1] }}" data-cost="{{ p[2] }}" class="product-row"
+              style="--d: {{ loop.index * 0.02 }}s; animation-delay: var(--d);">
+              <td>
+                <div class="row-num">{{ loop.index }}</div>
+              </td>
+              <td>
+                <span class="sku-badge {{ 'auto' if p[0].startswith('AUTO-') else 'manual' }}">{{ p[0] }}</span>
+              </td>
+              <td>
+                <div class="product-name">{{ p[1] }}</div>
+              </td>
+              <td>
+                <div class="cost-cell">
+                  <input type="number" step="0.01" min="0" class="cost-input {{ 'zero' if p[2] == 0 else '' }}"
+                    id="cost-{{ loop.index }}" value="{{ p[2] }}" data-original="{{ p[2] }}"
+                    oninput="onCostChange(this)">
+                  <span class="currency-label">ر.س</span>
+                  {% if p[2] == 0 %}
+                  <span class="pulse-dot" title="بحاجة لتحديث التكلفة"></span>
+                  {% endif %}
+                </div>
+              </td>
+              <td>
+                <button class="save-btn" data-sku="{{ p[0] }}" data-name="{{ p[1] }}" data-input="cost-{{ loop.index }}"
+                  onclick="handleUpdate(this)">
+                  💾 حفظ
+                </button>
+              </td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="5">
+                <div class="empty-state">
+                  <div class="icon">📦</div>
+                  <div class="title">لا توجد منتجات مسجلة بعد</div>
+                  <div class="desc">قم برفع ملفات الطلبات أولاً من لوحة التحكم لاكتشاف المنتجات تلقائياً</div>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="no-results" id="noResults">
+        <div class="icon">🔍</div>
+        <p style="font-weight: 700; margin-bottom: 4px;">لم يتم العثور على نتائج</p>
+        <p>جرّب البحث بكلمات مختلفة</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toasts"></div>
+
+  <script>
+    // ── State ──
+    const modifiedInputs = new Set();
+    let activeFilter = 'all';
+
+    // ── Init ──
+    document.addEventListener('DOMContentLoaded', () => {
+      updateKPIs();
+      setActiveFilter('all');
+    });
+
+    // ── KPI Calculation ──
+    function updateKPIs() {
+      const rows = document.querySelectorAll('.product-row');
+      let total = 0, priced = 0, zero = 0, auto = 0;
+
+      rows.forEach(row => {
+        total++;
+        const cost = parseFloat(row.dataset.cost);
+        const sku = row.dataset.sku;
+        if (cost > 0) priced++;
+        else zero++;
+        if (sku.startsWith('AUTO-')) auto++;
+      });
+
+      animateValue('kpi-total', total);
+      animateValue('kpi-priced', priced);
+      animateValue('kpi-zero', zero);
+      animateValue('kpi-auto', auto);
+    }
+
+    function animateValue(id, target) {
+      const el = document.getElementById(id);
+      const current = parseInt(el.textContent) || 0;
+      if (current === target) { el.textContent = target; return; }
+      const diff = target - current;
+      const steps = Math.min(Math.abs(diff), 20);
+      const increment = diff / steps;
+      let step = 0;
+      const timer = setInterval(() => {
+        step++;
+        el.textContent = Math.round(current + increment * step);
+        if (step >= steps) { el.textContent = target; clearInterval(timer); }
+      }, 30);
+    }
+
+    // ── Search ──
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const query = this.value.toLowerCase().trim();
+      filterRows(query);
+    });
+
+    function filterRows(query) {
+      const rows = document.querySelectorAll('.product-row');
+      let visible = 0;
+
+      rows.forEach(row => {
+        const name = row.dataset.name.toLowerCase();
+        const sku = row.dataset.sku.toLowerCase();
+        const cost = parseFloat(row.querySelector('.cost-input').value);
+
+        let matchSearch = !query || name.includes(query) || sku.includes(query);
+        let matchFilter = true;
+
+        if (activeFilter === 'zero') matchFilter = cost === 0;
+        else if (activeFilter === 'auto') matchFilter = sku.startsWith('AUTO-');
+
+        if (matchSearch && matchFilter) {
+          row.style.display = '';
+          visible++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      document.getElementById('visibleCount').textContent = visible;
+      document.getElementById('noResults').classList.toggle('visible', visible === 0 && rows.length > 0);
+    }
+
+    // ── Filter Buttons ──
+    function filterProducts(type) {
+      activeFilter = type;
+      setActiveFilter(type);
+      filterRows(document.getElementById('searchInput').value.toLowerCase().trim());
+    }
+
+    function setActiveFilter(type) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (type === 'all') document.getElementById('filterAll').classList.add('active');
+      else if (type === 'zero') document.getElementById('filterZero').classList.add('active');
+      else if (type === 'auto') document.getElementById('filterAuto').classList.add('active');
+    }
+
+    // ── Cost Change Tracking ──
+    function onCostChange(input) {
+      const original = parseFloat(input.dataset.original);
+      const current = parseFloat(input.value);
+      const inputId = input.id;
+
+      if (current !== original && !isNaN(current)) {
+        modifiedInputs.add(inputId);
+        input.style.borderColor = 'var(--amber)';
+      } else {
+        modifiedInputs.delete(inputId);
+        input.style.borderColor = '';
+      }
+
+      updateSaveAllButton();
+    }
+
+    function updateSaveAllButton() {
+      const btn = document.getElementById('saveAllBtn');
+      const count = document.getElementById('modifiedCount');
+
+      if (modifiedInputs.size > 0) {
+        btn.disabled = false;
+        count.style.display = 'inline';
+        count.textContent = modifiedInputs.size;
+      } else {
+        btn.disabled = true;
+        count.style.display = 'none';
+      }
+    }
+
+    // ── Single Save ──
+    function handleUpdate(btn) {
+      const sku = btn.dataset.sku;
+      const name = btn.dataset.name;
+      const inputId = btn.dataset.input;
+      updateCost(sku, name, inputId, btn);
+    }
+
+    let isSaving = false; // Flag to prevent concurrent saves
+
+    async function updateCost(sku, name, inputId, btn) {
+      if (isSaving) {
+        showToast('الرجاء الانتظار حتى اكتمال الحفظ الحالي', 'info');
+        return;
+      }
+
+      const input = document.getElementById(inputId);
+      const cost = parseFloat(input.value);
+
+      if (isNaN(cost) || cost < 0) {
+        showToast('الرجاء إدخال رقم صحيح', 'error');
+        input.focus();
+        return;
+      }
+
+      isSaving = true;
+      btn.classList.add('saving');
+      btn.innerHTML = '⏳ جاري...';
+
+      try {
+        const res = await fetch('/api/update-cost', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sku, name, cost })
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          showToast(`تم تحديث تكلفة المنتج بنجاح ✅`, 'success');
+
+          try {
+            input.classList.add('saved');
+            input.classList.remove('zero');
+            input.dataset.original = cost;
+
+            // Remove pulse dot if exists
+            const pulseDot = input.parentElement.querySelector('.pulse-dot');
+            if (pulseDot) pulseDot.remove();
+
+            // Update row data
+            const row = input.closest('tr');
+            if (row) row.dataset.cost = cost;
+
+            // Remove from modified
+            modifiedInputs.delete(inputId);
+            updateSaveAllButton();
+
+            // أظهر زر إعادة توليد التقرير
+            document.getElementById('regenBtn').style.display = 'inline-flex';
+
+            setTimeout(() => {
+              input.classList.remove('saved');
+              input.style.borderColor = '';
+            }, 2000);
+
+            updateKPIs();
+          } catch (uiErr) {
+            console.error("UI update error:", uiErr);
+          }
+        } else {
+          showToast(data.error || 'حدث خطأ أثناء التحديث ❌', 'error');
+        }
+      } catch (e) {
+        console.error(e);
+        showToast('فشل الاتصال بالسيرفر. يرجى المحاولة مرة أخرى ❌', 'error');
+      } finally {
+        isSaving = false;
+        btn.classList.remove('saving');
+        btn.innerHTML = '💾 حفظ';
+      }
+    }
+
+    // ── Save All Modified ──
+    async function saveAllModified() {
+      if (isSaving) {
+        showToast('الرجاء الانتظار حتى اكتمال الحفظ الحالي', 'info');
+        return;
+      }
+
+      const btn = document.getElementById('saveAllBtn');
+      btn.disabled = true;
+      btn.innerHTML = '⏳ جاري الحفظ...';
+
+      const items = [];
+      const inputsArray = [...modifiedInputs];
+
+      for (const inputId of inputsArray) {
+        const input = document.getElementById(inputId);
+        if (!input) continue;
+
+        const row = input.closest('tr');
+        const sku = row.dataset.sku;
+        const name = row.dataset.name;
+        const cost = parseFloat(input.value);
+
+        if (!isNaN(cost) && cost >= 0) {
+          items.push({ sku, name, cost });
+        }
+      }
+
+      if (items.length === 0) {
+        btn.disabled = false;
+        btn.innerHTML = '💾 حفظ جميع التعديلات';
+        return;
+      }
+
+      isSaving = true;
+      try {
+        const res = await fetch('/api/save-bulk-costs', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items })
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          showToast(data.message || `تم حفظ ${items.length} تعديل بنجاح ✅`, 'success');
+
+          try {
+            // Update UI for each saved input
+            for (const inputId of inputsArray) {
+              const input = document.getElementById(inputId);
+              if (input) {
+                input.dataset.original = input.value;
+                input.classList.remove('zero');
+                input.style.borderColor = '';
+                const row = input.closest('tr');
+                if (row) row.dataset.cost = input.value;
+                const pulseDot = input.parentElement.querySelector('.pulse-dot');
+                if (pulseDot) pulseDot.remove();
+              }
+            }
+
+            modifiedInputs.clear();
+            updateSaveAllButton();
+            updateKPIs();
+
+            // أظهر زر إعادة توليد التقرير
+            document.getElementById('regenBtn').style.display = 'inline-flex';
+          } catch (uiErr) {
+            console.error("UI update error:", uiErr);
+          }
+
+          showToast('جاري تحديث الأرباح في الخلفية... انقر على "إعادة توليد التقرير" بعد ثوانٍ لتحديث Excel 📊', 'info');
+        } else {
+          showToast(data.error || 'فشل حفظ التعديلات ❌', 'error');
+        }
+      } catch (e) {
+        console.error(e);
+        showToast('حدث خطأ أثناء الاتصال بالسيرفر. يرجى التحقق من الشبكة ❌', 'error');
+      } finally {
+        isSaving = false;
+        btn.innerHTML = '💾 حفظ جميع التعديلات';
+        btn.disabled = (modifiedInputs.size === 0);
+      }
+    }
+
+    // ── Toast ──
+    function showToast(msg, type = 'success') {
+      const container = document.getElementById('toasts');
+      const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      toast.innerHTML = `<span>${icons[type] || ''}</span> ${msg}`;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease forwards';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // ── Upload Costs ──
+    async function uploadCosts(input) {
+      const files = input.files;
+      if (files.length === 0) return;
+
+      const formData = new FormData();
+      for (let i = 0; i < files.length; i++) {
+        formData.append('files', files[i]);
+      }
+
+      showToast('جاري رفع ومعالجة الملفات...', 'info');
+
+      try {
+        const res = await fetch('/api/upload-costs', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast(data.message || 'تم تحديث التكاليف بنجاح ✅', 'success');
+          // أظهر زر إعادة توليد التقرير
+          document.getElementById('regenBtn').style.display = 'inline-flex';
+          showToast('انقر على "إعادة توليد التقرير" لتحديث Excel بالتكاليف الجديدة 📊', 'info');
+          // Reload page to show new costs after delay
+          setTimeout(() => location.reload(), 2000);
+        } else {
+          showToast(data.error || 'فشل معالجة الملف', 'error');
+        }
+      } catch (e) {
+        console.error(e);
+        showToast('حدث خطأ أثناء الاتصال بالسيرفر', 'error');
+      } finally {
+        input.value = ''; // Reset file input
+      }
+    }
+
+    // ── Regenerate Report ──
+    async function regenerateReport() {
+      const modal = document.getElementById('regenModal');
+      const logEl = document.getElementById('regenLog');
+      const reportsEl = document.getElementById('regenReports');
+      const btn = document.getElementById('regenBtn');
+
+      modal.style.display = 'flex';
+      logEl.textContent = '⏳ جاري تطبيق التكاليف وإعادة توليد التقرير...';
+      reportsEl.style.display = 'none';
+      btn.disabled = true;
+      btn.innerHTML = '⏳ جاري التوليد...';
+
+      try {
+        const res = await fetch('/regenerate-report', { method: 'POST' });
+        const data = await res.json();
+
+        if (data.success) {
+          logEl.textContent = data.log || 'تم بنجاح';
+          logEl.scrollTop = logEl.scrollHeight;
+
+          // Show reports list
+          if (data.reports && data.reports.length > 0) {
+            reportsEl.style.display = 'block';
+            const listEl = document.getElementById('regenReportsList');
+            listEl.innerHTML = data.reports.slice(0, 5).map(r => `
+            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--surface2); border-radius:10px; margin-bottom:8px; border:1px solid var(--border);">
+              <span style="font-size:24px;">📊</span>
+              <div style="flex:1;">
+                <div style="font-size:13px; font-weight:600; color:var(--text);">${r.name}</div>
+                <div style="font-size:11px; color:var(--muted); margin-top:2px;">${r.size} KB | ${r.modified}</div>
+              </div>
+              <a href="/download/${r.name}" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:10px; background:linear-gradient(135deg,var(--cyan),var(--blue)); color:#fff; text-decoration:none; font-size:13px; font-weight:700;">⬇️ تحميل</a>
+            </div>
+          `).join('');
+          }
+
+          showToast('✅ تم إعادة توليد التقرير بالتكاليف المحدّثة!', 'success');
+        } else {
+          logEl.textContent = '❌ ' + (data.message || 'حدث خطأ');
+          showToast(data.message || 'فشل إعادة التوليد', 'error');
+        }
+      } catch (e) {
+        logEl.textContent = '❌ فشل الاتصال بالسيرفر';
+        showToast('فشل الاتصال بالسيرفر', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '📊 إعادة توليد التقرير بالتكاليف';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

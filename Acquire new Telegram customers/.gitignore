@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Telethon session files (contain auth tokens — never commit these!)
+*.session
+*.session-journal
+
+# Environment secrets
+.env
+
+# Output data
+output/
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp

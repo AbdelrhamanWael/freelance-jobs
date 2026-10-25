@@ -1,0 +1,17 @@
+                 SKU            Barcode                                                                                                                        Brand Title
+0    612415459580-V2  Qariyat Al Shamal                                           قرية الشمال Dried Barberries, Natural Plant Product, for Rice and Salads, 80 Grams  None
+1   6287035693795-V2        Reeq Alnahl                           Reeq Alnahl Amlou Butter with Roasted Almonds, Honey, and Olive Oil, No Additives, 350g, Glass Jar  None
+2    609143663518-V2               RAHI                                      RAHI Organic Stevia Sweetener, Natural Zero Calorie Sugar Replacement, 50 Packets, 100g  None
+3   6285049348816-V2             Nabata                                                                                          Nabata Pure Natural Tar Oil, 100 ml  None
+4    605547218422-V2        Reeq Alnahl                Reeq Alnahl Bee Pollen Gummies with Natural Honey, Dietary Supplement, 60 Gummies, 240g, Made in Saudi Arabia  None
+5   6281000606605-V2          Almarwani        Almarwani Grounded Carob Powder, 150g, Caffeine-Free, Rich in Fibre and Minerals, Suitable for Vegans, Resealable Bag  None
+6   6287028458400-V2          Almarwani                                                             Almarwani Fine Doum Powder, 100% Natural, 150g, Resealable Pouch  None
+7   6285049347581-V2             Nabata                                                                                  Nabata Black Seed Oil, 100% Natural, 100 ml  None
+8   6281500518484-V2          Almarwani                                                       Al Marwani Greek Mastic Resin, 100% Natural, 10 Gram, Sealed Container  None
+9    612415457838-V2  Qariyat Al Shamal                                                 قرية الشمال Ground Pomegranate Peel Powder, 100g, Natural, No Additives, Jar  None
+10  6287033294253-V2            Ethkher                                                Izkher Arabic Gum Oil Spray, Natural Herbal Formula, for Hair and Body, 30 ml  None
+11   603787530311-V2  Qariyat Al Shamal                                                           Qariyat Al Shamal Natural Carob Powder, 145 Gram, Sealed Container  None
+12   609143663525-V2               RAHI  RAHI Organic Monk Fruit Blend Sweetener, 100g, 50 Packets, Zero Sugar Zero Fat Zero Calories, for Baked Desserts and Drinks  None
+13   609143662894-V2               RAHI                                                                                        راهي - سكر جوز الهند العضوي، 500 جرام  None
+14   609143663167-V2               RAHI                                              RAHI Natural Almond Flour, 100% Natural, Gluten Free, Rich in Fibre, Keto, 250g  None
+15   603787727308-V2  Qariyat Al Shamal                                             قرية الشمال Habhabwa Natural Traditional Flavour Cubes, Snack for All Ages, 170g  None

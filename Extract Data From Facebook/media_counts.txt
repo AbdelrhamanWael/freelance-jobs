@@ -1,0 +1,4 @@
+Total rows: 284
+Media Type
+Text    284
+Name: count, dtype: int64

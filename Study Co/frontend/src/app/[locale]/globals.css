@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --yellow: #fca311;
+  --yellow-dark: #e8950e;
+  --dark: #1e1e2e;
+  --text-dark: #1a1a2e;
+}
+
+@theme inline {
+  --color-yellow: var(--yellow);
+  --color-yellow-dark: var(--yellow-dark);
+  --color-dark: var(--dark);
+  --color-text-dark: var(--text-dark);
+}
+
+/* Arabic font */
+[dir="rtl"] body,
+[lang="ar"] body {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Indonesian font */
+[dir="ltr"] body,
+[lang="id"] body {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar for testimonials slider */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

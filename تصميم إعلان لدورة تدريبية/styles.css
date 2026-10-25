@@ -1,0 +1,314 @@
+:root {
+    --primary-teal: #3da4a6;
+    --dark-teal: #176466;
+    --accent-red: #d8736b;
+    --accent-gold: #dfb23f;
+    --bg-beige: #fff9e9;
+    --text-dark: #595959;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background: linear-gradient(rgba(23, 39, 54, 0.35), rgba(23, 39, 54, 0.35)), url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px 24px;
+    color: var(--text-dark);
+}
+
+.flyer-container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 795px;
+    border-radius: 27px;
+    box-shadow: 0 27px 54px rgba(0, 0, 0, 0.28);
+    position: relative;
+    overflow: hidden;
+    padding: 52px 38px 47px;
+}
+
+/* Background Blobs */
+.blob {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.72;
+    border-radius: 50%;
+    background-color: #f7f3e8; /* very subtle beige */
+}
+.blob-1 {
+    width: 365px;
+    height: 365px;
+    top: -117px;
+    left: -118px;
+}
+.blob-2 {
+    width: 280px;
+    height: 280px;
+    bottom: 21%;
+    right: -118px;
+}
+.blob-3 {
+    width: 260px;
+    height: 260px;
+    bottom: -115px;
+    left: 19%;
+}
+
+.flyer-container > *:not(.blob) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+.institute-name {
+    color: var(--primary-teal);
+    font-size: 1.42rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.course-title {
+    font-size: 2.14rem;
+    color: var(--accent-red);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.course-subtitle {
+    font-size: 1.56rem;
+    color: var(--primary-teal);
+    font-weight: 800;
+    margin-bottom: 17px;
+}
+
+.badge-comprehensive {
+    display: inline-block;
+    background-color: var(--primary-teal);
+    color: var(--white);
+    min-width: 180px;
+    padding: 8px 31px 9px;
+    border-radius: 50px;
+    font-size: 1.16rem;
+    font-weight: 700;
+}
+
+/* Features */
+.features-section {
+    background-color: var(--bg-beige);
+    border-radius: 17px;
+    padding: 27px 30px;
+    margin-bottom: 36px;
+}
+
+.features-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 43px;
+    row-gap: 17px;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: #9c7634; /* Darker gold/brown */
+    white-space: nowrap;
+}
+
+.features-list li i {
+    color: var(--accent-gold);
+    margin-left: 12px;
+    font-size: 1.18rem;
+}
+
+/* Trainers */
+.trainers-section {
+    margin-bottom: 34px;
+}
+
+.trainers-group {
+    margin-bottom: 27px;
+}
+
+.section-title {
+    color: var(--primary-teal);
+    font-size: 1.18rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 4px;
+    display: inline-flex;
+}
+
+.section-title i {
+    color: var(--accent-gold);
+}
+
+.trainers-cards {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.trainer-card {
+    background: transparent;
+    padding: 5px 11px 6px;
+    border-radius: 7px;
+    text-align: center;
+    min-width: 138px;
+}
+
+.trainer-red {
+    border: 1px solid var(--accent-red);
+}
+.trainer-red .trainer-name {
+    color: var(--accent-red);
+}
+
+.trainer-teal {
+    border: 1px solid var(--primary-teal);
+}
+.trainer-teal .trainer-name {
+    color: var(--dark-teal);
+}
+
+.trainer-name {
+    font-size: 0.98rem;
+    font-weight: 800;
+}
+
+/* Details Section */
+.details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 34px;
+}
+
+.detail-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-beige);
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.detail-box .icon {
+    color: white;
+    width: 49px;
+    min-width: 49px;
+    min-height: 48px;
+    padding: 10px;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+}
+
+.detail-box .content {
+    flex: 1;
+    padding: 10px 17px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.detail-box.date-box .icon { background: var(--accent-gold); }
+.detail-box.duration-box .icon { background: #6b9e59; /* green */ }
+.detail-box.time-box .icon { background: #9dbb64; /* light green */ }
+
+/* Pricing */
+.pricing-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    margin-bottom: 27px;
+}
+
+.price-normal {
+    font-size: 1.11rem;
+    color: var(--accent-red);
+    font-weight: 800;
+}
+
+.price-early {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 800;
+    background: var(--accent-gold);
+    display: inline-block;
+    padding: 10px 28px 11px;
+    border-radius: 50px;
+}
+
+.price-early span {
+    font-size: 1.36rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 0;
+}
+
+.registration {
+    background: var(--dark-teal);
+    color: white;
+    display: inline-block;
+    min-width: 340px;
+    padding: 11px 28px 12px;
+    border-radius: 13px;
+    font-size: 1.36rem;
+    font-weight: 900;
+    margin-bottom: 17px;
+}
+
+.registration .label {
+    margin-left: 0.5rem;
+    color: var(--accent-gold);
+}
+
+.slogan {
+    font-size: 1.16rem;
+    font-weight: 800;
+    color: var(--primary-teal);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 18px 12px; }
+    .flyer-container { padding: 36px 20px; }
+    .course-title { font-size: 1.68rem; }
+    .institute-name { font-size: 1.12rem; }
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+    .features-list li {
+        white-space: normal;
+    }
+    .registration { min-width: min(100%, 340px); font-size: 1.1rem; }
+    .pricing-section { flex-direction: column; gap: 12px; }
+}

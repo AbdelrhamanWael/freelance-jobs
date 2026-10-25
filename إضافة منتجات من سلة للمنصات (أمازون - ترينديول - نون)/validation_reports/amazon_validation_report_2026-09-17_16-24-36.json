@@ -1,0 +1,424 @@
+{
+  "summary": {
+    "total_products": 5,
+    "overall_matched": 5,
+    "overall_mismatched": 0,
+    "not_found_on_amazon": 0,
+    "total_fields_checked": 40,
+    "matched_fields": 30,
+    "accuracy_percentage": 75.0,
+    "generated_at": "2026-09-17T16:24:36.330102"
+  },
+  "products": [
+    {
+      "sku": "6288202684011",
+      "asin": "B071480529",
+      "salla_name": "حناء المدينة مطحونة 250 جرام",
+      "amazon_title": "حناء المدينة مطحونة 250 جرام",
+      "overall_match": true,
+      "error_message": null,
+      "diffs": [
+        {
+          "field_name": "SKU",
+          "expected_val": "6288202684011",
+          "actual_val": "6288202684011",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "ASIN",
+          "expected_val": "Assigned B0...",
+          "actual_val": "B071480529",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "Product Title",
+          "expected_val": "حناء المدينة مطحونة 250 جرام",
+          "actual_val": "حناء المدينة مطحونة 250 جرام",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Match (100% similarity)"
+        },
+        {
+          "field_name": "Price",
+          "expected_val": "15.00 SAR",
+          "actual_val": "15.00 SAR",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Exact match (15.00 SAR)"
+        },
+        {
+          "field_name": "Images",
+          "expected_val": "1 images (https://cdn.salla.sa/RvYXP/9014e057-5b3d-4565-87a8-91b1b62173ce-1000x1000-LtliJNiaqSJLO0CK0v9HXbH9krncMn25XQn5T4Ki.jpg)",
+          "actual_val": "1 images (https://cdn.salla.sa/RvYXP/9014e057-5b3d-4565-87a8-91b1b62173ce-1000x1000-LtliJNiaqSJLO0CK0v9HXbH9krncMn25XQn5T4Ki.jpg)",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Amazon has 1 image(s), Salla has 1"
+        },
+        {
+          "field_name": "Bullet Points",
+          "expected_val": "8 bullets in Salla",
+          "actual_val": "0 bullets on Amazon",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Listing lacks bullet points on live page"
+        },
+        {
+          "field_name": "Description",
+          "expected_val": "672 characters",
+          "actual_val": "0 characters",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Product description empty on Amazon"
+        },
+        {
+          "field_name": "Listing Status",
+          "expected_val": "Active",
+          "actual_val": "Active",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        }
+      ]
+    },
+    {
+      "sku": "6288202684004",
+      "asin": "B008101598",
+      "salla_name": "سدر مطحون 250 جرام",
+      "amazon_title": "سدر مطحون 250 جرام",
+      "overall_match": true,
+      "error_message": null,
+      "diffs": [
+        {
+          "field_name": "SKU",
+          "expected_val": "6288202684004",
+          "actual_val": "6288202684004",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "ASIN",
+          "expected_val": "Assigned B0...",
+          "actual_val": "B008101598",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "Product Title",
+          "expected_val": "سدر مطحون 250 جرام",
+          "actual_val": "سدر مطحون 250 جرام",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Match (100% similarity)"
+        },
+        {
+          "field_name": "Price",
+          "expected_val": "10.00 SAR",
+          "actual_val": "10.00 SAR",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Exact match (10.00 SAR)"
+        },
+        {
+          "field_name": "Images",
+          "expected_val": "1 images (https://cdn.salla.sa/RvYXP/bde3226e-10db-4c05-82e6-c2885f1a1fbc-1000x1000-4Mjo44GIdpGzAVlJtDxAQkJlIjWIl13JEGA2FCQ4.jpg)",
+          "actual_val": "1 images (https://cdn.salla.sa/RvYXP/bde3226e-10db-4c05-82e6-c2885f1a1fbc-1000x1000-4Mjo44GIdpGzAVlJtDxAQkJlIjWIl13JEGA2FCQ4.jpg)",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Amazon has 1 image(s), Salla has 1"
+        },
+        {
+          "field_name": "Bullet Points",
+          "expected_val": "8 bullets in Salla",
+          "actual_val": "0 bullets on Amazon",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Listing lacks bullet points on live page"
+        },
+        {
+          "field_name": "Description",
+          "expected_val": "733 characters",
+          "actual_val": "0 characters",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Product description empty on Amazon"
+        },
+        {
+          "field_name": "Listing Status",
+          "expected_val": "Active",
+          "actual_val": "Active",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        }
+      ]
+    },
+    {
+      "sku": "653871228259",
+      "asin": "B016921277",
+      "salla_name": "طحينة السمسم العضوية 300 جرام",
+      "amazon_title": "طحينة السمسم العضوية 300 جرام",
+      "overall_match": true,
+      "error_message": null,
+      "diffs": [
+        {
+          "field_name": "SKU",
+          "expected_val": "653871228259",
+          "actual_val": "653871228259",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "ASIN",
+          "expected_val": "Assigned B0...",
+          "actual_val": "B016921277",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "Product Title",
+          "expected_val": "طحينة السمسم العضوية 300 جرام",
+          "actual_val": "طحينة السمسم العضوية 300 جرام",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Match (100% similarity)"
+        },
+        {
+          "field_name": "Price",
+          "expected_val": "21.74 SAR",
+          "actual_val": "21.74 SAR",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Exact match (21.74 SAR)"
+        },
+        {
+          "field_name": "Images",
+          "expected_val": "1 images (https://cdn.salla.sa/RvYXP/JjsU2R9m71XIiBpGftek9wjdK36CX6MD5DDzbv45.jpg)",
+          "actual_val": "1 images (https://cdn.salla.sa/RvYXP/JjsU2R9m71XIiBpGftek9wjdK36CX6MD5DDzbv45.jpg)",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Amazon has 1 image(s), Salla has 1"
+        },
+        {
+          "field_name": "Bullet Points",
+          "expected_val": "8 bullets in Salla",
+          "actual_val": "0 bullets on Amazon",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Listing lacks bullet points on live page"
+        },
+        {
+          "field_name": "Description",
+          "expected_val": "724 characters",
+          "actual_val": "0 characters",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Product description empty on Amazon"
+        },
+        {
+          "field_name": "Listing Status",
+          "expected_val": "Active",
+          "actual_val": "Active",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        }
+      ]
+    },
+    {
+      "sku": "6288202678003",
+      "asin": "B000380064",
+      "salla_name": "عسل السدر البلدي 500 جرام",
+      "amazon_title": "عسل السدر البلدي 500 جرام",
+      "overall_match": true,
+      "error_message": null,
+      "diffs": [
+        {
+          "field_name": "SKU",
+          "expected_val": "6288202678003",
+          "actual_val": "6288202678003",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "ASIN",
+          "expected_val": "Assigned B0...",
+          "actual_val": "B000380064",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "Product Title",
+          "expected_val": "عسل السدر البلدي 500 جرام",
+          "actual_val": "عسل السدر البلدي 500 جرام",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Match (100% similarity)"
+        },
+        {
+          "field_name": "Price",
+          "expected_val": "152.17 SAR",
+          "actual_val": "152.17 SAR",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Exact match (152.17 SAR)"
+        },
+        {
+          "field_name": "Images",
+          "expected_val": "1 images (https://cdn.salla.sa/RvYXP/151875ac-fcb6-4f97-83e2-ca3b6732d7f0-1000x1000-OikbkQfWQEGf0MTTQ7sgTdEziueAkjpa22uOzfXr.jpg)",
+          "actual_val": "1 images (https://cdn.salla.sa/RvYXP/151875ac-fcb6-4f97-83e2-ca3b6732d7f0-1000x1000-OikbkQfWQEGf0MTTQ7sgTdEziueAkjpa22uOzfXr.jpg)",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Amazon has 1 image(s), Salla has 1"
+        },
+        {
+          "field_name": "Bullet Points",
+          "expected_val": "19 bullets in Salla",
+          "actual_val": "0 bullets on Amazon",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Listing lacks bullet points on live page"
+        },
+        {
+          "field_name": "Description",
+          "expected_val": "927 characters",
+          "actual_val": "0 characters",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Product description empty on Amazon"
+        },
+        {
+          "field_name": "Listing Status",
+          "expected_val": "Active",
+          "actual_val": "Active",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        }
+      ]
+    },
+    {
+      "sku": "6288202678027",
+      "asin": "B040279193",
+      "salla_name": "عسل السمر البلدي 500 جرام",
+      "amazon_title": "عسل السمر البلدي 500 جرام",
+      "overall_match": true,
+      "error_message": null,
+      "diffs": [
+        {
+          "field_name": "SKU",
+          "expected_val": "6288202678027",
+          "actual_val": "6288202678027",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "ASIN",
+          "expected_val": "Assigned B0...",
+          "actual_val": "B040279193",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        },
+        {
+          "field_name": "Product Title",
+          "expected_val": "عسل السمر البلدي 500 جرام",
+          "actual_val": "عسل السمر البلدي 500 جرام",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Match (100% similarity)"
+        },
+        {
+          "field_name": "Price",
+          "expected_val": "152.17 SAR",
+          "actual_val": "152.17 SAR",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Exact match (152.17 SAR)"
+        },
+        {
+          "field_name": "Images",
+          "expected_val": "1 images (https://cdn.salla.sa/RvYXP/9c048cf8-a508-405a-a69c-7bfbde4dcbcb-1000x1000-ethqZoyQsr2JR1SZlbHllFbprtO7fEiQo1fQtGp8.jpg)",
+          "actual_val": "1 images (https://cdn.salla.sa/RvYXP/9c048cf8-a508-405a-a69c-7bfbde4dcbcb-1000x1000-ethqZoyQsr2JR1SZlbHllFbprtO7fEiQo1fQtGp8.jpg)",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": "Amazon has 1 image(s), Salla has 1"
+        },
+        {
+          "field_name": "Bullet Points",
+          "expected_val": "19 bullets in Salla",
+          "actual_val": "0 bullets on Amazon",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Listing lacks bullet points on live page"
+        },
+        {
+          "field_name": "Description",
+          "expected_val": "847 characters",
+          "actual_val": "0 characters",
+          "matched": false,
+          "status_icon": "⚠",
+          "severity": "WARNING",
+          "difference_note": "Product description empty on Amazon"
+        },
+        {
+          "field_name": "Listing Status",
+          "expected_val": "Active",
+          "actual_val": "Active",
+          "matched": true,
+          "status_icon": "✓",
+          "severity": "MATCH",
+          "difference_note": ""
+        }
+      ]
+    }
+  ]
+}

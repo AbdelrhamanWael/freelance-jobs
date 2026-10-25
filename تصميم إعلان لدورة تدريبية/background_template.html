@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خلفية الإعلان (بدون نصوص)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hide all text and icons that should be editable */
+        .institute-name, 
+        .course-title, 
+        .course-subtitle, 
+        .badge-comprehensive,
+        .features-list li,
+        .section-title,
+        .trainer-name,
+        .content,
+        .price-normal,
+        .price-early,
+        .registration,
+        .slogan {
+            visibility: hidden;
+        }
+        
+        /* Keep icons visible in the detail boxes if they are static */
+        .detail-box .icon {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer-container">
+        <!-- Soft Background Blobs -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        
+        <!-- Header Placeholder -->
+        <header class="header" style="height: 180px;">
+            <h2 class="institute-name">معهد مئة وثمانون درجة العالي للتدريب</h2>
+            <h1 class="course-title">دورة التأسيس لاختبار القدرات</h1>
+            <h3 class="course-subtitle">(كمي ولفظي)</h3>
+            <div class="badge-comprehensive">دورة شاملة</div>
+        </header>
+
+        <!-- Features Placeholder -->
+        <section class="features-section" style="height: 120px;">
+            <ul class="features-list">
+                <li><i class="fa-solid fa-check-circle" style="visibility: visible;"></i> Text</li>
+                <li><i class="fa-solid fa-check-circle" style="visibility: visible;"></i> Text</li>
+                <li><i class="fa-solid fa-check-circle" style="visibility: visible;"></i> Text</li>
+                <li><i class="fa-solid fa-check-circle" style="visibility: visible;"></i> Text</li>
+                <li><i class="fa-solid fa-check-circle" style="visibility: visible;"></i> Text</li>
+                <li><i class="fa-solid fa-check-circle" style="visibility: visible;"></i> Text</li>
+            </ul>
+        </section>
+
+        <!-- Trainers Placeholder -->
+        <section class="trainers-section">
+            <div class="trainers-group">
+                <h3 class="section-title"><i class="fa-solid fa-user-tie" style="visibility: visible;"></i> Title</h3>
+                <div class="trainers-cards">
+                    <div class="trainer-card trainer-red"><h4 class="trainer-name">Name</h4></div>
+                    <div class="trainer-card trainer-teal"><h4 class="trainer-name">Name</h4></div>
+                    <div class="trainer-card trainer-red"><h4 class="trainer-name">Name</h4></div>
+                </div>
+            </div>
+
+            <div class="trainers-group">
+                <h3 class="section-title"><i class="fa-solid fa-user-graduate" style="visibility: visible;"></i> Title</h3>
+                <div class="trainers-cards">
+                    <div class="trainer-card trainer-teal"><h4 class="trainer-name">Name</h4></div>
+                    <div class="trainer-card trainer-red"><h4 class="trainer-name">Name</h4></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Placeholder -->
+        <section class="details-section">
+            <div class="detail-box date-box">
+                <div class="icon"><i class="fa-regular fa-calendar-days"></i></div>
+                <div class="content">Text</div>
+            </div>
+            
+            <div class="detail-box duration-box">
+                <div class="icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                <div class="content">Text</div>
+            </div>
+
+            <div class="detail-box time-box">
+                <div class="icon"><i class="fa-regular fa-clock"></i></div>
+                <div class="content">Text</div>
+            </div>
+        </section>
+
+        <!-- Pricing Placeholder -->
+        <section class="pricing-section">
+            <div class="price-normal">Text</div>
+            <div class="price-early">Text</div>
+        </section>
+
+        <!-- Contact Placeholder -->
+        <footer class="footer">
+            <div class="registration">Text</div>
+            <p class="slogan">Text</p>
+        </footer>
+    </div>
+</body>
+</html>

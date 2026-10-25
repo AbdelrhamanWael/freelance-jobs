@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+data/
+database/
+finance_system.db
+
+# Temporary files
+temp/
+*.tmp
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploaded client data files
+samples/
+reports/
+
+# Agent / IDE folders
+.agent/
+.qodo/
+.gemini/
+
+# Excel files and archives
+*.zip
+*.rar
+*.7z
+
+# Exclude all configuration and backup files that are not needed in source control
+*_old.py
+*_backup.py
+*.bak
+client_response.txt
+git_history.txt
+git_log.txt

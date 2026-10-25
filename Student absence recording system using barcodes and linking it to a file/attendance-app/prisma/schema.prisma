@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Class {
+  id        String    @id @default(cuid())
+  name      String
+  students  Student[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Student {
+  id          String       @id @default(cuid())
+  name        String
+  classId     String
+  class       Class        @relation(fields: [classId], references: [id], onDelete: Cascade)
+  attendances Attendance[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Attendance {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  date      DateTime // Store as simple date (e.g., YYYY-MM-DD at 00:00:00)
+  status    String   @default("ABSENT") // "PRESENT" or "ABSENT"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([studentId, date]) // A student can only have one attendance record per day
+}

@@ -1,0 +1,19 @@
+# TikTok Account Creator — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Core Automation ──────────────────────────────────────────────────────────
+playwright>=1.44.0            # Async Playwright browser automation
+playwright-stealth>=1.0.6    # Anti-detection patches (Navigator, WebGL, Canvas)
+
+# ── HTTP / API Clients ───────────────────────────────────────────────────────
+aiohttp>=3.9.0               # Async HTTP for SadCaptcha + email provider APIs
+requests>=2.31.0             # Sync HTTP (utility/fallback use)
+
+# ── Proxy Support ─────────────────────────────────────────────────────────────
+pproxy>=2.0.0                # SOCKS5 proxy relay for authenticated proxies
+
+# ── Data Generation ──────────────────────────────────────────────────────────
+faker>=25.0.0                # Realistic random names, bios, usernames
+
+# ── CLI Dashboard ────────────────────────────────────────────────────────────
+rich>=13.7.0                 # Live terminal UI — tables, progress bars, colours

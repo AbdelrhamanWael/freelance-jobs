@@ -38,3 +38,21 @@ desktop.ini
 **/.agent/
 **/.qodo/
 **/.gemini/
+**/.playwright-mcp/
+**/.devin/
+
+# Environment files, secrets & credentials
+**/.env
+**/.env.*
+!**/.env.example
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/credentials.json
+**/client_secret*.json
+**/service-account*.json
+
+# Scratch & temporary experimental test folders
+**/scratch/
+

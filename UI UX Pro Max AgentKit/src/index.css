@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   DESIGN SYSTEM — BU3D.ai
+   Cinematic Dark/Light Theme | Glassmorphism | 3D AI SaaS
+   ───────────────────────────────────────────────────────────── */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* ── Color Tokens ── */
+  --color-background:          var(--bg);
+  --color-foreground:          var(--fg);
+  --color-primary:             var(--primary);
+  --color-primary-foreground:  var(--primary-fg);
+  --color-secondary:           var(--secondary);
+  --color-secondary-foreground:var(--secondary-fg);
+  --color-accent:              var(--accent);
+  --color-accent-foreground:   var(--accent-fg);
+  --color-neon:                var(--neon);
+  --color-muted:               var(--muted);
+  --color-muted-foreground:    var(--muted-fg);
+  --color-border:              var(--border);
+  --color-surface:             var(--surface);
+
+  /* ── Typography ── */
+  --font-sans:    "Tajawal", "Inter", sans-serif;
+  --font-display: "Inter", "Tajawal", sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* ── Border Radius ── */
+  --radius-card:   16px;
+  --radius-modal:  24px;
+  --radius-pill:   9999px;
+
+  /* ── Easing ── */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  /* ── DARK MODE (default) ─────────────────────────────────── */
+  :root {
+    --bg:              #050506;
+    --fg:              #EDEDEF;
+    --primary:         #7C3AED;
+    --primary-fg:      #FFFFFF;
+    --secondary:       #6366F1;
+    --secondary-fg:    #FFFFFF;
+    --accent:          #EC4899;
+    --accent-fg:       #FFFFFF;
+    --neon:            #00D4FF;
+    --muted:           #0a0a0c;
+    --muted-fg:        #8A8F98;
+    --border:          rgba(255, 255, 255, 0.08);
+    --surface:         rgba(255, 255, 255, 0.05);
+    /* Glass layer colours */
+    --glass-bg:        rgba(255, 255, 255, 0.04);
+    --glass-border:    rgba(255, 255, 255, 0.08);
+    --glass-panel-bg:  rgba(10, 10, 14, 0.70);
+    /* Glow intensities (full in dark mode) */
+    --glow-mult:       1;
+    /* Card variables */
+    --card-bg:         rgba(255, 255, 255, 0.04);
+    --card-shadow:     0 0 0 transparent;
+    --card-border:     rgba(255, 255, 255, 0.08);
+    /* Dot grid color */
+    --dot-color:       rgba(255,255,255,0.06);
+  }
+
+  /* ── LIGHT MODE ──────────────────────────────────────────── */
+  :root.light {
+    --bg:              #F7F5FA;
+    --fg:              #1A1A2E;
+    --primary:         #7C3AED;
+    --primary-fg:      #FFFFFF;
+    --secondary:       #6366F1;
+    --secondary-fg:    #FFFFFF;
+    --accent:          #EC4899;
+    --accent-fg:       #FFFFFF;
+    --neon:            #0099CC;      /* slightly deeper cyan for light bg */
+    --muted:           #EDE8F5;
+    --muted-fg:        #5A5A7A;
+    --border:          rgba(124, 58, 237, 0.12);
+    --surface:         rgba(255, 255, 255, 0.70);
+    /* Glass layers become white-ish in light mode */
+    --glass-bg:        rgba(255, 255, 255, 0.70);
+    --glass-border:    rgba(124, 58, 237, 0.15);
+    --glass-panel-bg:  rgba(255, 255, 255, 0.80);
+    /* Glow intensities reduced 40% */
+    --glow-mult:       0.6;
+    /* Card variables */
+    --card-bg:         #FFFFFF;
+    --card-shadow:     0 4px 20px rgba(0, 0, 0, 0.08);
+    --card-border:     rgba(124, 58, 237, 0.18);
+    /* Dot grid */
+    --dot-color:       rgba(100,80,180,0.06);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* smooth theme colour transition across the whole page */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track  { background: var(--bg); }
+  ::-webkit-scrollbar-thumb  { background: rgba(124, 58, 237, 0.5); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.8); }
+
+  /* Selection */
+  ::selection { background: rgba(124, 58, 237, 0.3); color: #fff; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   GLASSMORPHISM UTILITIES
+   ───────────────────────────────────────────────────────────── */
+@layer utilities {
+
+  /* Standard glass card — adapts to theme via CSS vars */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Premium glass panel */
+  .glass-panel {
+    background: var(--glass-panel-bg);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      0 32px 64px -12px rgba(0, 0, 0, 0.4),
+      0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Floating glass control panel (modal — always dark) */
+  .glass-control {
+    background: rgba(5, 5, 6, 0.85);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
+  }
+
+  /* ── Light-mode card ─────────────────────────────────────── */
+  .theme-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Glow effects — scaled by --glow-mult */
+  .glow-primary {
+    box-shadow: 0 0 40px -5px rgba(124, 58, 237, calc(0.4 * var(--glow-mult, 1)));
+  }
+  .glow-accent {
+    box-shadow: 0 0 40px -5px rgba(236, 72, 153, calc(0.35 * var(--glow-mult, 1)));
+  }
+  .glow-neon {
+    box-shadow: 0 0 40px -5px rgba(0, 212, 255, calc(0.3 * var(--glow-mult, 1)));
+  }
+  .text-glow-primary {
+    text-shadow: 0 0 30px rgba(124, 58, 237, calc(0.6 * var(--glow-mult, 1)));
+  }
+  .text-glow-neon {
+    text-shadow: 0 0 20px rgba(0, 212, 255, calc(0.5 * var(--glow-mult, 1)));
+  }
+
+  /* ── Pricing card hover lift ─────────────────────────────── */
+  .pricing-card-hover {
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+  }
+  .pricing-card-hover:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  /* "Most Popular" card always-on idle glow */
+  .pricing-popular-glow {
+    box-shadow:
+      0 0 0 1px rgba(124, 58, 237, 0.40),
+      0 0 40px -8px rgba(124, 58, 237, calc(0.45 * var(--glow-mult, 1))),
+      0 12px 40px -10px rgba(124, 58, 237, calc(0.25 * var(--glow-mult, 1)));
+  }
+  .pricing-popular-glow:hover {
+    box-shadow:
+      0 0 0 1px rgba(124, 58, 237, 0.60),
+      0 0 60px -8px rgba(124, 58, 237, calc(0.65 * var(--glow-mult, 1))),
+      0 20px 60px -10px rgba(124, 58, 237, calc(0.35 * var(--glow-mult, 1)));
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  /* 3D perspective tilt utility */
+  .perspective-1000 { perspective: 1000px; }
+  .transform-3d { transform-style: preserve-3d; }
+
+  /* ── ANIMATED GRADIENT BORDER ───────────────────────────── */
+  .gradient-border {
+    position: relative;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #7C3AED, #6366F1, #EC4899, #00D4FF);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .gradient-border:hover::before { opacity: 1; }
+
+  /* ── SHIMMER (loading cards) ────────────────────────────── */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.06) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+  }
+
+  /* ── PROGRESS BAR SHIMMER (brighter, faster) ────────────── */
+  .progress-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent       0%,
+      rgba(255,255,255,0.35) 45%,
+      rgba(255,255,255,0.55) 50%,
+      rgba(255,255,255,0.35) 55%,
+      transparent       100%
+    );
+    background-size: 250% 100%;
+    animation: progress-sweep 1.5s linear infinite;
+  }
+  @keyframes progress-sweep {
+    0%   { background-position: 250% 0; }
+    100% { background-position: -250% 0; }
+  }
+
+  /* ── SPARKLE ICON PULSE ─────────────────────────────────── */
+  @keyframes sparkle-pulse {
+    0%, 100% { transform: rotate(0deg) scale(1);    opacity: 1;    }
+    25%       { transform: rotate(15deg) scale(1.18); opacity: 0.85; }
+    50%       { transform: rotate(0deg) scale(1.08); opacity: 1;    }
+    75%       { transform: rotate(-12deg) scale(1.15); opacity: 0.9; }
+  }
+  .sparkle-pulse {
+    animation: sparkle-pulse 2s ease-in-out infinite;
+    display: inline-block;
+    transform-origin: center;
+  }
+
+  /* ── HERO RING ROTATION ─────────────────────────────────── */
+  @keyframes ring-spin-cw {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes ring-spin-ccw {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+  }
+  .ring-rotate-cw {
+    animation: ring-spin-cw 75s linear infinite;
+    will-change: transform;
+  }
+  .ring-rotate-ccw {
+    animation: ring-spin-ccw 90s linear infinite;
+    will-change: transform;
+  }
+
+  /* ── HERO RING GLOW PULSE ───────────────────────────────── */
+  @keyframes ring-glow-breathe {
+    0%, 100% { opacity: 0.80; filter: blur(0px);   }
+    50%       { opacity: 1.00; filter: blur(2px);   }
+  }
+  .ring-glow-breathe {
+    animation: ring-glow-breathe 4s ease-in-out infinite;
+    will-change: opacity, filter;
+  }
+
+  /* ── PARALLAX BLOB (scrolls at 0.5× via JS, CSS fallback) ── */
+  .parallax-blob {
+    will-change: transform;
+  }
+
+  /* ── AMBIENT BLOB FLOAT ─────────────────────────────────── */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: blob-float 8s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+  }
+  @keyframes blob-float {
+    0%, 100% { transform: translate(0,  0)   scale(1);    }
+    33%       { transform: translate(30px,-20px) scale(1.05); }
+    66%       { transform: translate(-20px,20px) scale(0.95); }
+  }
+
+  /* ── THEME TOGGLE ICON SPIN ─────────────────────────────── */
+  @keyframes theme-flip {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(180deg); }
+  }
+  .theme-icon-dark  { animation: theme-flip 0.3s ease forwards; }
+  .theme-icon-light { animation: theme-flip 0.3s ease reverse forwards; }
+
+  /* ── DOT GRID ───────────────────────────────────────────── */
+  .dot-grid {
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* ── SCROLL HINT BOUNCE ─────────────────────────────────── */
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0);  opacity: 1;   }
+    50%       { transform: translateY(6px); opacity: 0.7; }
+  }
+  .scroll-bounce { animation: scroll-bounce 1.5s ease-in-out infinite; }
+
+  /* ── NEON BORDER PULSE ──────────────────────────────────── */
+  @keyframes neon-pulse {
+    0%, 100% { border-color: rgba(124,58,237,0.3); box-shadow: 0 0 10px rgba(124,58,237,0.1); }
+    50%       { border-color: rgba(124,58,237,0.7); box-shadow: 0 0 20px rgba(124,58,237,0.3); }
+  }
+  .neon-pulse { animation: neon-pulse 2s ease-in-out infinite; }
+
+  /* ── STATUS BADGE PULSE ─────────────────────────────────── */
+  @keyframes status-glow {
+    0%, 100% { box-shadow: 0 0  4px rgba(74,222,128,0.4); }
+    50%       { box-shadow: 0 0 12px rgba(74,222,128,0.8); }
+  }
+  .status-live { animation: status-glow 2s ease-in-out infinite; }
+
+  /* ── SMOOTH TEXT REVEAL ─────────────────────────────────── */
+  .text-reveal { overflow: hidden; }
+  .text-reveal span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: text-up 0.8s var(--ease-smooth) forwards;
+  }
+  @keyframes text-up { to { transform: translateY(0); } }
+
+  /* ── GLOBAL TRANSITION for theme-aware elements ──────────── */
+  .theme-transition {
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+}

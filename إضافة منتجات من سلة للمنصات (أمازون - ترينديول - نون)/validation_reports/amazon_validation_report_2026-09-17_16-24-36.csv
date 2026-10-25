@@ -1,0 +1,41 @@
+﻿Product Identifier (SKU),Amazon ASIN,Product Name (Salla),Amazon Title,Field Name,Expected Value (Salla),Actual Value (Amazon),Match Status,Severity,Difference Notes
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,SKU,6288202684011,6288202684011,✓,MATCH,
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,ASIN,Assigned B0...,B071480529,✓,MATCH,
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,Product Title,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,✓,MATCH,Match (100% similarity)
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,Price,15.00 SAR,15.00 SAR,✓,MATCH,Exact match (15.00 SAR)
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,Images,1 images (https://cdn.salla.sa/RvYXP/9014e057-5b3d-4565-87a8-91b1b62173ce-1000x1000-LtliJNiaqSJLO0CK0v9HXbH9krncMn25XQn5T4Ki.jpg),1 images (https://cdn.salla.sa/RvYXP/9014e057-5b3d-4565-87a8-91b1b62173ce-1000x1000-LtliJNiaqSJLO0CK0v9HXbH9krncMn25XQn5T4Ki.jpg),✓,MATCH,"Amazon has 1 image(s), Salla has 1"
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,Bullet Points,8 bullets in Salla,0 bullets on Amazon,⚠,WARNING,Listing lacks bullet points on live page
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,Description,672 characters,0 characters,⚠,WARNING,Product description empty on Amazon
+6288202684011,B071480529,حناء المدينة مطحونة 250 جرام,حناء المدينة مطحونة 250 جرام,Listing Status,Active,Active,✓,MATCH,
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,SKU,6288202684004,6288202684004,✓,MATCH,
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,ASIN,Assigned B0...,B008101598,✓,MATCH,
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,Product Title,سدر مطحون 250 جرام,سدر مطحون 250 جرام,✓,MATCH,Match (100% similarity)
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,Price,10.00 SAR,10.00 SAR,✓,MATCH,Exact match (10.00 SAR)
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,Images,1 images (https://cdn.salla.sa/RvYXP/bde3226e-10db-4c05-82e6-c2885f1a1fbc-1000x1000-4Mjo44GIdpGzAVlJtDxAQkJlIjWIl13JEGA2FCQ4.jpg),1 images (https://cdn.salla.sa/RvYXP/bde3226e-10db-4c05-82e6-c2885f1a1fbc-1000x1000-4Mjo44GIdpGzAVlJtDxAQkJlIjWIl13JEGA2FCQ4.jpg),✓,MATCH,"Amazon has 1 image(s), Salla has 1"
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,Bullet Points,8 bullets in Salla,0 bullets on Amazon,⚠,WARNING,Listing lacks bullet points on live page
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,Description,733 characters,0 characters,⚠,WARNING,Product description empty on Amazon
+6288202684004,B008101598,سدر مطحون 250 جرام,سدر مطحون 250 جرام,Listing Status,Active,Active,✓,MATCH,
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,SKU,653871228259,653871228259,✓,MATCH,
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,ASIN,Assigned B0...,B016921277,✓,MATCH,
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,Product Title,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,✓,MATCH,Match (100% similarity)
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,Price,21.74 SAR,21.74 SAR,✓,MATCH,Exact match (21.74 SAR)
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,Images,1 images (https://cdn.salla.sa/RvYXP/JjsU2R9m71XIiBpGftek9wjdK36CX6MD5DDzbv45.jpg),1 images (https://cdn.salla.sa/RvYXP/JjsU2R9m71XIiBpGftek9wjdK36CX6MD5DDzbv45.jpg),✓,MATCH,"Amazon has 1 image(s), Salla has 1"
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,Bullet Points,8 bullets in Salla,0 bullets on Amazon,⚠,WARNING,Listing lacks bullet points on live page
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,Description,724 characters,0 characters,⚠,WARNING,Product description empty on Amazon
+653871228259,B016921277,طحينة السمسم العضوية 300 جرام,طحينة السمسم العضوية 300 جرام,Listing Status,Active,Active,✓,MATCH,
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,SKU,6288202678003,6288202678003,✓,MATCH,
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,ASIN,Assigned B0...,B000380064,✓,MATCH,
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,Product Title,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,✓,MATCH,Match (100% similarity)
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,Price,152.17 SAR,152.17 SAR,✓,MATCH,Exact match (152.17 SAR)
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,Images,1 images (https://cdn.salla.sa/RvYXP/151875ac-fcb6-4f97-83e2-ca3b6732d7f0-1000x1000-OikbkQfWQEGf0MTTQ7sgTdEziueAkjpa22uOzfXr.jpg),1 images (https://cdn.salla.sa/RvYXP/151875ac-fcb6-4f97-83e2-ca3b6732d7f0-1000x1000-OikbkQfWQEGf0MTTQ7sgTdEziueAkjpa22uOzfXr.jpg),✓,MATCH,"Amazon has 1 image(s), Salla has 1"
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,Bullet Points,19 bullets in Salla,0 bullets on Amazon,⚠,WARNING,Listing lacks bullet points on live page
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,Description,927 characters,0 characters,⚠,WARNING,Product description empty on Amazon
+6288202678003,B000380064,عسل السدر البلدي 500 جرام,عسل السدر البلدي 500 جرام,Listing Status,Active,Active,✓,MATCH,
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,SKU,6288202678027,6288202678027,✓,MATCH,
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,ASIN,Assigned B0...,B040279193,✓,MATCH,
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,Product Title,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,✓,MATCH,Match (100% similarity)
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,Price,152.17 SAR,152.17 SAR,✓,MATCH,Exact match (152.17 SAR)
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,Images,1 images (https://cdn.salla.sa/RvYXP/9c048cf8-a508-405a-a69c-7bfbde4dcbcb-1000x1000-ethqZoyQsr2JR1SZlbHllFbprtO7fEiQo1fQtGp8.jpg),1 images (https://cdn.salla.sa/RvYXP/9c048cf8-a508-405a-a69c-7bfbde4dcbcb-1000x1000-ethqZoyQsr2JR1SZlbHllFbprtO7fEiQo1fQtGp8.jpg),✓,MATCH,"Amazon has 1 image(s), Salla has 1"
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,Bullet Points,19 bullets in Salla,0 bullets on Amazon,⚠,WARNING,Listing lacks bullet points on live page
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,Description,847 characters,0 characters,⚠,WARNING,Product description empty on Amazon
+6288202678027,B040279193,عسل السمر البلدي 500 جرام,عسل السمر البلدي 500 جرام,Listing Status,Active,Active,✓,MATCH,
