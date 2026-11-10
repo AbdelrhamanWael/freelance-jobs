@@ -1,4 +1,4 @@
-import { createServerClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/server";
 
 export type DbClient = {
   id: string;
@@ -11,7 +11,7 @@ export type DbClient = {
 
 export async function getDbClients(): Promise<DbClient[]> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("clients")
       .select("*")

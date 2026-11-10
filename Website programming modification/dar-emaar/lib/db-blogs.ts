@@ -1,4 +1,4 @@
-import { createServerClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/server";
 
 export type BlogPost = {
   id: string;
@@ -18,7 +18,7 @@ export type BlogPost = {
 
 export async function getRecentBlogs(limit = 3): Promise<BlogPost[]> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("blog_posts")
       .select("*")
@@ -35,7 +35,7 @@ export async function getRecentBlogs(limit = 3): Promise<BlogPost[]> {
 
 export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     let decodedSlug = slug;
     try {
       decodedSlug = decodeURIComponent(slug);
@@ -72,7 +72,7 @@ export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
 
 export async function getRelatedBlogs(currentId: string, limit = 3): Promise<BlogPost[]> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("blog_posts")
       .select("*")

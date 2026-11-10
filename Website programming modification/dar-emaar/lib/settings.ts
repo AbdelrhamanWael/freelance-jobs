@@ -5,7 +5,7 @@
  * Cached per-request (Next.js default for Server Components).
  */
 
-import { createServerClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/server";
 
 export type SiteSettings = {
   primary_color: string;
@@ -52,7 +52,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
  */
 export async function getSettings(): Promise<SiteSettings> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("site_settings")
       .select("*")

@@ -4,7 +4,7 @@
  * Falls back gracefully to empty arrays if DB is unavailable.
  */
 
-import { createServerClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/server";
 
 export type DbCategory = {
   id: string;
@@ -39,7 +39,7 @@ export type DbProject = {
 
 export async function getDbProjects(categorySlug?: string): Promise<DbProject[]> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     let query = supabase
       .from("projects")
       .select("*, category:categories(id, name, slug, icon, sort_order)")
@@ -71,7 +71,7 @@ export async function getDbProjects(categorySlug?: string): Promise<DbProject[]>
 /** Fetch a single project by slug or ID, supporting decoded Arabic slugs. */
 export async function getDbProjectBySlug(slug: string): Promise<DbProject | null> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     let decodedSlug = slug;
     try {
       decodedSlug = decodeURIComponent(slug);
@@ -119,7 +119,7 @@ export async function getDbProjectBySlug(slug: string): Promise<DbProject | null
 
 export async function getDbCategories(): Promise<DbCategory[]> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("categories")
       .select("id, name, slug, icon, sort_order")

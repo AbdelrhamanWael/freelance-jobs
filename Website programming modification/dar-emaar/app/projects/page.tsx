@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "تصفح أبرز مشاريع دار اعمار الغربية في التصميم والبناء والتشطيبات وإدارة المشاريع.",
 };
 
+export const revalidate = 60;
+
 type Props = {
   searchParams: Promise<{ category?: string }>;
 };

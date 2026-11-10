@@ -4,7 +4,7 @@
  * Returns a typed dictionary so components can safely access content.
  */
 
-import { createServerClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/server";
 
 export type PageContent = {
   hero_title: string;
@@ -152,7 +152,7 @@ export function getContactServices(content?: PageContent | null): string[] {
  */
 export async function getPageContent(): Promise<PageContent> {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("page_content")
       .select("key, value");

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getSettings } from "@/lib/settings";
-import { createServerClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { FileText } from "lucide-react";
 import type { Metadata } from "next";
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "مقالات ونصائح في عالم المقاولات والبناء والتصميم.",
 };
 
+export const revalidate = 60;
+
 export default async function BlogPage() {
   // If blog is disabled, redirect to home
   const settings = await getSettings();
@@ -20,7 +22,7 @@ export default async function BlogPage() {
     redirect("/");
   }
 
-  const supabase = await createServerClient();
+  const supabase = createPublicClient();
   const { data: posts = [] } = await supabase
     .from("blog_posts")
     .select("slug, title, excerpt, cover_image, author, created_at, tags")

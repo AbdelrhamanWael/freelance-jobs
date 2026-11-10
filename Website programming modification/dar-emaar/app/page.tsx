@@ -14,6 +14,8 @@ import { getDbProjects } from "@/lib/db-projects";
 import { getDbClients } from "@/lib/db-clients";
 import { getStats } from "@/app/actions/stats";
 
+export const revalidate = 60;
+
 export default async function Home() {
   const content = await getPageContent();
   const settings = await getSettings();

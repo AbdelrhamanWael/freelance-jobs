@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createServerClient, checkAuth } from "@/lib/supabase/server";
+import { createServerClient, createPublicClient, checkAuth } from "@/lib/supabase/server";
 
 export async function saveStat(formData: FormData) {
   await checkAuth();
@@ -42,7 +42,7 @@ export async function deleteStat(id: string) {
 
 export async function getStats() {
   try {
-    const supabase = await createServerClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("stats")
       .select("*")
