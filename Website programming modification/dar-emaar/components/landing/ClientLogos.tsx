@@ -1,5 +1,7 @@
 "use client";
 
+
+import { optimized } from "@/lib/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { staggerContainer, scaleIn, fadeInUp } from "@/lib/animations";
@@ -65,7 +67,7 @@ export default function ClientLogos({ dbClients = [] }: { dbClients?: DbClient[]
             >
               {client.logo_url ? (
                 <img 
-                  src={client.logo_url} 
+                  src={optimized(client.logo_url, 256)} loading="lazy" decoding="async" 
                   alt={client.name} 
                   className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" 
                 />

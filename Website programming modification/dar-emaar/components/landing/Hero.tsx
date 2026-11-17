@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+
+import { optimized } from "@/lib/image";
+import { motion } from "framer-motion";
 import {
   floatAnimation,
   glowPulse,
@@ -16,9 +18,9 @@ export default function Hero({
   content?: PageContent; 
   heroBgImage?: string; 
 }) {
-  const { scrollY } = useScroll();
+  
   // Subtle parallax — hero content moves up slightly as user scrolls
-  const y = useTransform(scrollY, [0, 500], [0, -80]);
+  const y = 0;
   const activeBgImage = heroBgImage || content?.hero_bg_image;
 
   return (
@@ -27,7 +29,7 @@ export default function Hero({
       {activeBgImage ? (
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src={activeBgImage}
+            src={optimized(activeBgImage, 1920)} fetchPriority="high" decoding="async"
             alt="خلفية الواجهة"
             className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
           />
@@ -56,16 +58,9 @@ export default function Hero({
           />
 
           {/* Animated glowing orbs */}
-          <motion.div
-            variants={glowPulse}
-            animate="animate"
-            className="absolute top-0 start-0 w-[500px] h-[500px] bg-[var(--color-accent)] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20"
+          <div className="absolute top-0 start-0 w-[500px] h-[500px] bg-[var(--color-accent)] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20"
           />
-          <motion.div
-            variants={glowPulse}
-            animate="animate"
-            style={{ animationDelay: "2.5s" }}
-            className="absolute bottom-0 end-0 w-[500px] h-[500px] bg-[var(--color-accent)] rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none opacity-20"
+          <div className="absolute bottom-0 end-0 w-[500px] h-[500px] bg-[var(--color-accent)] rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none opacity-20"
           />
 
           {/* Floating geometric shapes (sharp) */}
@@ -97,7 +92,7 @@ export default function Hero({
         {/* Content wrapper */}
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 bg-white/85 backdrop-blur-md border border-white/70 shadow-sm rounded-full px-5 py-2 mb-8 animate-fade-in delay-100">
+          <div className="inline-flex items-center gap-2.5 bg-white/85 border border-white/70 shadow-sm rounded-full px-5 py-2 mb-8 animate-fade-in delay-100">
             <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
             <span className="text-[var(--color-primary)] text-sm font-bold tracking-wide">
               {content?.hero_badge || "أكثر من 15 عاماً من الثقة والجودة"}
@@ -115,7 +110,7 @@ export default function Hero({
 
           {/* Sub-headline */}
           <div className="mb-10 animate-fade-in-up delay-300">
-            <p className="inline-block bg-white/75 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/60 shadow-sm text-[#1B2A4A] text-base sm:text-lg lg:text-xl font-semibold leading-relaxed max-w-2xl mx-auto">
+            <p className="inline-block bg-white/75 px-6 py-3 rounded-2xl border border-white/60 shadow-sm text-[#1B2A4A] text-base sm:text-lg lg:text-xl font-semibold leading-relaxed max-w-2xl mx-auto">
               {content?.hero_subtitle || "نقدم حلولاً متكاملة في المقاولات والتشطيبات وإدارة المشاريع بمعايير جودة عالية وكفاءة محترفة"}
             </p>
           </div>
@@ -138,7 +133,7 @@ export default function Hero({
             <motion.a
               href="tel:+966500000000"
               whileHover={{ scale: 1.04 }}
-              className="inline-flex items-center gap-3 bg-white/80 hover:bg-white backdrop-blur-md px-6 py-2.5 rounded-full border border-white/70 shadow-sm hover:shadow-md text-[var(--color-primary)] transition-all group"
+              className="inline-flex items-center gap-3 bg-white/80 hover:bg-white px-6 py-2.5 rounded-full border border-white/70 shadow-sm hover:shadow-md text-[var(--color-primary)] transition-all group"
             >
               <div className="w-9 h-9 rounded-full bg-[var(--color-primary)]/10 group-hover:bg-[var(--color-primary)]/20 flex items-center justify-center text-[var(--color-primary)] transition-colors">
                 <PhoneCall className="w-4 h-4" strokeWidth={2.5} />

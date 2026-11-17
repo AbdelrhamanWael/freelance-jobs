@@ -171,7 +171,7 @@ export default function Services({ content }: { content?: PageContent }) {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.6 }}
-          className="text-center bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-[var(--color-primary)]/10 max-w-3xl mx-auto shadow-sm"
+          className="text-center bg-white/60 p-6 rounded-2xl border border-[var(--color-primary)]/10 max-w-3xl mx-auto shadow-sm"
         >
           <p className="text-[var(--color-accent)] text-sm sm:text-base leading-relaxed mb-2 font-medium">
             {footerText}

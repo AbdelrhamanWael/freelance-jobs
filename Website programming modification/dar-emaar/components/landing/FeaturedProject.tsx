@@ -1,5 +1,7 @@
 "use client";
 
+
+import { optimized } from "@/lib/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
@@ -41,7 +43,7 @@ export default function FeaturedProject({
           className="text-center mb-14"
         >
           {/* Prominent, Luminous High-Contrast Badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#004B4B]/40 border border-[#2dd4bf]/50 text-[#2dd4bf] text-sm sm:text-base font-extrabold tracking-wide mb-4 shadow-[0_0_20px_rgba(45,212,191,0.2)] backdrop-blur-md">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#004B4B]/40 border border-[#2dd4bf]/50 text-[#2dd4bf] text-sm sm:text-base font-extrabold tracking-wide mb-4 shadow-[0_0_20px_rgba(45,212,191,0.2)]">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2dd4bf] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2dd4bf]"></span>
@@ -58,7 +60,7 @@ export default function FeaturedProject({
         </motion.div>
 
         {/* Featured project — split slide-in from sides */}
-        <div ref={ref} className="bg-white/5 border border-white/10 rounded-xl overflow-hidden mb-10 shadow-2xl backdrop-blur-sm">
+        <div ref={ref} className="bg-white/5 border border-white/10 rounded-xl overflow-hidden mb-10 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
             {/* Image — slides in from right */}
@@ -70,14 +72,14 @@ export default function FeaturedProject({
             >
               <div className="text-center text-white/30">
                 {featuredProject?.images?.[0] ? (
-                  <img src={featuredProject.images[0]} alt={featuredProject.title} className="w-full h-full object-cover absolute inset-0 opacity-50 mix-blend-overlay hover:scale-105 transition-transform duration-700" />
+                  <img src={optimized(featuredProject.images[0], 1080)} loading="lazy" decoding="async" alt={featuredProject.title} className="w-full h-full object-cover absolute inset-0 opacity-50 mix-blend-overlay hover:scale-105 transition-transform duration-700" />
                 ) : (
                   <svg className="w-16 h-16 mx-auto mb-3 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 )}
               </div>
-              <div className="absolute top-4 start-4 bg-[var(--color-primary,#004B4B)] border border-white/20 text-white text-xs sm:text-sm font-bold px-4 py-1.5 rounded-lg z-10 shadow-lg backdrop-blur-sm">
+              <div className="absolute top-4 start-4 bg-[var(--color-primary,#004B4B)] border border-white/20 text-white text-xs sm:text-sm font-bold px-4 py-1.5 rounded-lg z-10 shadow-lg">
                 {content?.projects_featured_label || "مشروع مميز"}
               </div>
             </motion.div>
@@ -150,14 +152,14 @@ export default function FeaturedProject({
               >
                 {/* Category badge */}
                 <div className="absolute top-2.5 start-2.5 z-10">
-                  <span className="text-xs font-bold text-white bg-[#0e2530]/85 border border-[#2dd4bf]/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                  <span className="text-xs font-bold text-white bg-[#0e2530]/85 border border-[#2dd4bf]/40 px-2.5 py-1 rounded-md">
                     {project.category?.name}
                   </span>
                 </div>
                 {/* Placeholder image icon */}
                 <div className="absolute inset-0 flex items-center justify-center text-white/20">
                   {project.images?.[0] ? (
-                    <img src={project.images[0]} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={optimized(project.images[0], 640)} loading="lazy" decoding="async" alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   ) : (
                     <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -168,7 +170,7 @@ export default function FeaturedProject({
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
-                  className="absolute inset-0 bg-[#0e2530]/80 backdrop-blur-xs flex flex-col items-center justify-center gap-1.5 p-4 transition-opacity"
+                  className="absolute inset-0 bg-[#0e2530]/80 flex flex-col items-center justify-center gap-1.5 p-4 transition-opacity"
                 >
                   <span className="text-white font-bold text-sm sm:text-base text-center leading-tight">{project.title}</span>
                   <span className="text-[#2dd4bf] text-xs font-semibold flex items-center gap-1 mt-1">
@@ -187,7 +189,7 @@ export default function FeaturedProject({
         <div className="mt-16 text-center">
           <Link
             href="/projects"
-            className="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/20 hover:bg-white/15 hover:border-white/40 transition-all text-white px-9 py-3.5 rounded-lg font-bold text-sm sm:text-base shadow-sm backdrop-blur-sm"
+            className="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/20 hover:bg-white/15 hover:border-white/40 transition-all text-white px-9 py-3.5 rounded-lg font-bold text-sm sm:text-base shadow-sm"
           >
             {content?.projects_view_all_cta || "عرض جميع المشاريع"}
             <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">

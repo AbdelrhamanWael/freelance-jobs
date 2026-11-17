@@ -1,5 +1,7 @@
 "use client";
 
+
+import { optimized } from "@/lib/image";
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -149,14 +151,14 @@ export default function ProjectDetail({ project, content }: Props) {
                     className="relative aspect-[16/9] bg-gradient-to-br from-[#004B4B] to-[#044a49] rounded-sm overflow-hidden shadow-sm group"
                   >
                     <img
-                      src={activeImage}
+                      src={optimized(activeImage, 1920)} decoding="async"
                       alt={`${project.title} - صورة ${activeImageIndex + 1}`}
                       className="w-full h-full object-cover absolute inset-0 transition-opacity duration-300"
                     />
 
                     {/* Image index counter badge */}
                     {images.length > 1 && (
-                      <div className="absolute top-3 end-3 bg-black/60 backdrop-blur-xs text-white text-xs font-semibold px-2.5 py-1 rounded-sm shadow-xs">
+                      <div className="absolute top-3 end-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-sm shadow-xs">
                         {activeImageIndex + 1} / {images.length}
                       </div>
                     )}
@@ -203,7 +205,7 @@ export default function ProjectDetail({ project, content }: Props) {
                           }`}
                         >
                           <img
-                            src={img}
+                            src={optimized(img, 384)} loading="lazy" decoding="async"
                             alt={`${project.title} - صورة مصغرة ${i + 1}`}
                             className="w-full h-full object-cover absolute inset-0"
                           />

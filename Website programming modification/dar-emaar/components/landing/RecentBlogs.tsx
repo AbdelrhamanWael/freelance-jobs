@@ -1,3 +1,4 @@
+import { optimized } from "@/lib/image";
 import { getRecentBlogs } from "@/lib/db-blogs";
 import Link from "next/link";
 import Image from "next/image";
@@ -38,7 +39,7 @@ export default async function RecentBlogs() {
                     blog.cover_image.startsWith("https://") ||
                     blog.cover_image.startsWith("/")) ? (
                     <img
-                      src={blog.cover_image}
+                      src={optimized(blog.cover_image, 640)} loading="lazy" decoding="async"
                       alt={blog.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

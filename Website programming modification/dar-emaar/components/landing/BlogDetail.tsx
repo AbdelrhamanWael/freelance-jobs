@@ -1,5 +1,7 @@
 "use client";
 
+
+import { optimized } from "@/lib/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -179,7 +181,7 @@ export default function BlogDetail({ post, relatedPosts, settings }: Props) {
             <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-[#004B4B] to-[#043333] border border-[var(--color-accent)]/15">
               {isValidCover ? (
                 <img
-                  src={post.cover_image}
+                  src={optimized(post.cover_image, 1920)} decoding="async"
                   alt={post.title}
                   className="w-full h-full object-cover"
                 />
@@ -416,7 +418,7 @@ export default function BlogDetail({ post, relatedPosts, settings }: Props) {
                       <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 relative border border-gray-200">
                         {item.cover_image && !item.cover_image.startsWith("file:") ? (
                           <img
-                            src={item.cover_image}
+                            src={optimized(item.cover_image, 384)} loading="lazy" decoding="async"
                             alt={item.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
@@ -474,7 +476,7 @@ export default function BlogDetail({ post, relatedPosts, settings }: Props) {
                   <div className="relative h-48 w-full overflow-hidden bg-gray-100">
                     {rPost.cover_image && !rPost.cover_image.startsWith("file:") ? (
                       <img
-                        src={rPost.cover_image}
+                        src={optimized(rPost.cover_image, 640)} loading="lazy" decoding="async"
                         alt={rPost.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
